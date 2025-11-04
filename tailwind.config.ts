@@ -21,6 +21,7 @@ const config: Config = {
         sans: ['var(--font-noto-sans)', 'sans-serif'],
         heading: ['var(--font-diphylleia)', 'serif'],
         'heading-en': ['var(--font-eb-garamond)', 'serif'],
+        'baskervville': ['var(--font-baskervville)', 'serif'],
       },
     },
   },

@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen px-4 pt-12 pb-16 bg-white">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <header className="text-center mb-16">
           <h1 className="section-title mb-4">Genesis Order</h1>
           <p className="text-xl text-[#0b0b0b] font-heading">창세의 질서</p>

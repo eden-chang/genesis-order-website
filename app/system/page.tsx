@@ -4,7 +4,7 @@ import PageNavigation from "@/components/layout/PageNavigation";
 export default function SystemPage() {
   return (
     <main className="min-h-screen px-4 pt-2 pb-16 bg-white">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         {/* 상단 네비게이션 */}
         <PageNavigation currentPath="/system" position="top" />
 

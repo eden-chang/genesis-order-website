@@ -4,13 +4,13 @@ import PageNavigation from "@/components/layout/PageNavigation";
 export default function AnnouncementsPage() {
   return (
     <main className="min-h-screen px-4 pt-2 pb-16 bg-white">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         {/* 상단 네비게이션 */}
         <PageNavigation currentPath="/notice" position="top" />
 
         <div className="text-center my-12">
           <h1 className="section-title mb-4">Notice</h1>
-          <p className="text-xl text-[#0b0b0b] font-heading">공지사항</p>
+          <p className="text-lg md:text-xl text-[#0b0b0b] font-heading">공지사항</p>
         </div>
 
         {/* Content Warning */}
@@ -19,7 +19,7 @@ export default function AnnouncementsPage() {
             <h2 className="text-base font-bold italic text-[#d4990a] mb-4 font-baskervville">
               Content Warning
             </h2>
-            <div className="space-y-2 text-sm leading-relaxed">
+            <div className="space-y-1 text-sm leading-normal">
               <p>본 커뮤니티는 <strong>부상, 상해, 살해, 사망, 폭력</strong> 등의 요소를 포함하고 있습니다.</p>
               <p>운영진은 위와 같은 비윤리적 행위를 옹호하지 않으며, 모든 사건과 인물, 배경은 허구입니다.</p>
               <p>러닝 도중 커뮤니티와 현실이 혼동될 시 운영진에게 알린 후 하차하시기를 권고합니다.</p>
@@ -29,38 +29,58 @@ export default function AnnouncementsPage() {
 
         {/* Schedule */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-8">
+          <h2 className="text-xl md:text-2xl font-bold mb-8">
             <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded">
-              <span className="font-baskervville font-bold">Schedule</span>
+              <span className="font-baskervville font-bold italic">Schedule</span>
             </span>
           </h2>
-          <div className="relative pl-8 space-y-6">
-            <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-gray-300"></div>
-            {[
-              { date: "12/11 00:00", text: "가산점 신청서 접수 시작" },
-              { date: "12/13 23:59", text: "가산점 신청서 접수 마감" },
-              { date: "12/13 00:00", text: "일반 신청서 접수 시작" },
-              { date: "12/18 23:59", text: "일반 신청서 접수 마감" },
-              { date: "12/20 22:00", text: "개장 및 인트로" },
-              { date: "01/03 22:00", text: "아웃트로" },
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="absolute left-0 top-0 w-4 h-4 rounded-full bg-[#e5a918] border-2 border-white transform -translate-x-1/2"></div>
-                <div className="font-bold text-[#0b0b0b] mb-1">{item.date}</div>
-                <div className="text-gray-700">{item.text}</div>
-              </div>
-            ))}
+          <div className="relative py-4">
+            {/* 타임라인 세로선 - 중앙 */}
+            <div className="absolute left-1/2 -top-[35px] -bottom-[35px] w-0.5 opacity-40 -translate-x-1/2" style={{ background: 'linear-gradient(to bottom, white 0%, #e5a918 10%, #e5a918 90%, white 100%)' }}></div>
+            
+            <div className="space-y-[70px]">
+              {[
+                { date: "12/11(목) 00:00", text: "가산점 신청서 접수 시작" },
+                { date: "12/13(토) 23:59", text: "가산점 신청서 접수 마감" },
+                { date: "12/14(일) 00:00", text: "일반 신청서 접수 시작" },
+                { date: "12/18(목) 23:59", text: "일반 신청서 접수 마감" },
+                { date: "12/20(토) 22:00", text: "개장 및 인트로" },
+                { date: "01/03(금) 22:00", text: "아웃트로" },
+              ].map((item, index) => {
+                const isLeft = index % 2 === 0;
+                return (
+                  <div key={index} className="relative flex items-center justify-center group">
+                    {/* 타임라인 마커 - 중앙 */}
+                    <div className="absolute left-1/2 flex items-center justify-center w-3 h-3 -translate-x-1/2 pointer-events-none">
+                      <div className="relative w-3 h-3 rounded-full bg-[#e5a918] border-2 border-white group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)] transition-all duration-200"></div>
+                    </div>
+                    
+                    {/* 카드 스타일 컨텐츠 */}
+                    <div className={`absolute bg-transparent border border-transparent rounded-lg transition-all duration-200 w-[200px] ${isLeft ? 'right-1/2 text-right pr-4 pl-4 pt-4 pb-4 mr-[5px]' : 'left-1/2 pl-4 pr-4 pt-4 pb-4 ml-[5px]'}`}>
+                      <div className={`flex items-center gap-3 mb-2 ${isLeft ? 'justify-end' : ''}`}>
+                        <div className="font-bold text-[#e5a918] text-xs transition-all duration-200 group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)]">
+                          {item.date}
+                        </div>
+                      </div>
+                      <div className="text-[#0b0b0b] text-sm leading-normal transition-all duration-200 group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)]">
+                        {item.text}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* Notice */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">
+          <h2 className="text-xl md:text-2xl font-bold mb-6">
             <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded">
-              <span className="font-baskervville font-bold">Notice</span>
+              <span className="font-baskervville font-bold italic">Notice</span>
             </span>
           </h2>
-          <div className="space-y-3 text-[#0b0b0b]">
+          <div className="space-y-3 text-[10.5pt] md:text-[11.5pt] text-[#0b0b0b] font-sans">
             {[
               <span key="1">본 문서는 자캐 커뮤니티<strong>〈Genesis Order〉</strong>의 공지사항 문서입니다.</span>,
               <span key="2">본 커뮤니티는 <strong>성인 연령가</strong>입니다. <strong>06년생</strong> 이상만 신청서를 제출할 수 있습니다.</span>,
@@ -77,7 +97,7 @@ export default function AnnouncementsPage() {
               <span key="13">연락처 교환을 위한 최소 툿은 <strong>300툿</strong>입니다.</span>,
               "운영진은 공지 미숙지로 인해 발생하는 일에 책임을 지지 않습니다.",
             ].map((text, index) => (
-              <div key={index} className="flex items-start leading-relaxed">
+              <div key={index} className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ✶
                 </span>
@@ -89,32 +109,32 @@ export default function AnnouncementsPage() {
 
         {/* Rules */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">
+          <h2 className="text-xl md:text-2xl font-bold mb-6">
             <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded">
-              <span className="font-baskervville font-bold">Rules</span>
+              <span className="font-baskervville font-bold italic">Rules</span>
             </span>
           </h2>
-          <div className="space-y-3 text-[#0b0b0b]">
-            <div className="flex items-start leading-relaxed">
+          <div className="space-y-3 text-[10.5pt] md:text-[11.5pt] text-[#0b0b0b] font-sans">
+            <div className="flex items-start leading-normal md:leading-relaxed">
               <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ✶
               </span>
               <span>본 커뮤니티는 경고 제도를 사용합니다. 경고 3회 누적 시 제명됩니다.</span>
             </div>
-            <div className="flex items-start leading-relaxed">
+            <div className="flex items-start leading-normal md:leading-relaxed">
               <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ✶
               </span>
               <span>제명된 캐릭터는 커뮤니티 내에서 처음부터 존재하지 않았던 인물이 됩니다.</span>
             </div>
-            <div className="flex items-start leading-relaxed">
+            <div className="flex items-start leading-normal md:leading-relaxed">
               <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ✶
               </span>
               <span>본 커뮤니티는 시리어스 커뮤니티이나, 어느 정도의 개그 멘트를 허용합니다. 다만 스토리 진행 시에는 개그 분위기가 형성되지 않도록 주의 부탁드립니다.</span>
             </div>
 
-            <div className="flex items-start leading-relaxed">
+            <div className="flex items-start leading-normal md:leading-relaxed">
               <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ✶
               </span>
@@ -136,7 +156,7 @@ export default function AnnouncementsPage() {
               ))}
             </div>
 
-            <div className="flex items-start leading-relaxed mt-6">
+            <div className="flex items-start leading-normal md:leading-relaxed mt-6">
               <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ✶
               </span>

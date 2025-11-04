@@ -12,10 +12,15 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: '#e4a408',
+          highlight: '#fff2cc',
+        },
       },
       fontFamily: {
         sans: ['var(--font-noto-sans)', 'sans-serif'],
         heading: ['var(--font-diphylleia)', 'serif'],
+        'heading-en': ['var(--font-eb-garamond)', 'serif'],
       },
     },
   },

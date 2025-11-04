@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR, Diphylleia } from "next/font/google";
+import { Noto_Sans_KR, EB_Garamond } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 // 기본 폰트: Noto Sans KR
@@ -10,11 +11,18 @@ const notoSansKR = Noto_Sans_KR({
   display: "swap",
 });
 
-// 섹션 제목 폰트: Diphylleia
-const diphylleia = Diphylleia({
-  subsets: ["latin"],
-  weight: ["400"],
+// 한글 제목 폰트: Diphylleia (로컬 파일)
+const diphylleia = localFont({
+  src: "../public/fonts/Diphylleia-Regular.ttf",
   variable: "--font-diphylleia",
+  display: "swap",
+});
+
+// 영어 제목 폰트: EB Garamond
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-eb-garamond",
   display: "swap",
 });
 
@@ -30,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${notoSansKR.variable} ${diphylleia.variable}`}>
-      <body className="font-sans antialiased bg-gray-900 text-gray-100">
+    <html lang="ko" className={`${notoSansKR.variable} ${diphylleia.variable} ${ebGaramond.variable}`}>
+      <body className="font-sans antialiased bg-white text-[#0b0b0b]">
         {children}
       </body>
     </html>

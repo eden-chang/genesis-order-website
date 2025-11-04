@@ -29,10 +29,10 @@ export default function Footnote({ term, description }: FootnoteProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 5 }}
             transition={{ duration: 0.2 }}
-            className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-sm text-gray-200 rounded-lg shadow-lg border border-gray-700 whitespace-nowrap max-w-xs"
+            className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-primary-highlight text-sm text-[#0b0b0b] rounded-lg shadow-lg border-2 border-primary whitespace-nowrap max-w-xs"
           >
             {description}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-800" />
+            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-primary-highlight" />
           </motion.div>
         )}
       </AnimatePresence>

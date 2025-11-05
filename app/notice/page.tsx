@@ -1,28 +1,40 @@
 import Link from "next/link";
-import PageNavigation from "@/components/layout/PageNavigation";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 export default function AnnouncementsPage() {
   return (
-    <main className="min-h-screen px-4 pt-2 pb-16 bg-white">
+    <>
+      <Header />
+      <main className="min-h-screen px-4 pt-[84px] pb-12 bg-white">
       <div className="max-w-3xl mx-auto">
-        {/* 상단 네비게이션 */}
-        <PageNavigation currentPath="/notice" position="top" />
 
         <div className="text-center my-12">
           <h1 className="section-title mb-4">Notice</h1>
-          <p className="text-lg md:text-xl text-[#0b0b0b] font-heading">공지사항</p>
+          <p className="text-lg md:text-xl text-[rgb(215,145,24)] font-heading">공지사항</p>
         </div>
 
         {/* Content Warning */}
         <section className="mb-16">
-          <div className="border-2 border-[#e5a918] bg-transparent p-6 text-center">
-            <h2 className="text-base font-bold italic text-[#d4990a] mb-4 font-baskervville">
-              Content Warning
-            </h2>
-            <div className="space-y-1 text-sm leading-normal">
-              <p>본 커뮤니티는 <strong>부상, 상해, 살해, 사망, 폭력</strong> 등의 요소를 포함하고 있습니다.</p>
-              <p>운영진은 위와 같은 비윤리적 행위를 옹호하지 않으며, 모든 사건과 인물, 배경은 허구입니다.</p>
-              <p>러닝 도중 커뮤니티와 현실이 혼동될 시 운영진에게 알린 후 하차하시기를 권고합니다.</p>
+          <div className="relative border-2 border-[#e5a918] overflow-hidden p-6 text-center rounded-lg">
+            {/* Background Image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm scale-[1.3]"
+              style={{ backgroundImage: 'url(/content-warning-bg.png)' }}
+            />
+            {/* White Overlay */}
+            <div className="absolute inset-0 bg-white opacity-60" />
+
+            {/* Content */}
+            <div className="relative z-10">
+              <h2 className="text-base font-bold italic text-[rgb(194,110,0)] mb-4 font-baskervville">
+                Content Warning
+              </h2>
+              <div className="space-y-1 text-sm leading-normal text-[rgb(194,110,0)]">
+                <p>본 커뮤니티는 <strong>부상, 상해, 살해, 사망, 폭력</strong> 등의 요소를 포함하고 있습니다.</p>
+                <p>운영진은 위와 같은 비윤리적 행위를 옹호하지 않으며, 모든 사건과 인물, 배경은 허구입니다.</p>
+                <p>러닝 도중 커뮤니티와 현실이 혼동될 시 운영진에게 알린 후 하차하시기를 권고합니다.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -38,7 +50,7 @@ export default function AnnouncementsPage() {
             {/* 타임라인 세로선 - 중앙 */}
             <div className="absolute left-1/2 -top-[35px] -bottom-[35px] w-0.5 opacity-40 -translate-x-1/2" style={{ background: 'linear-gradient(to bottom, white 0%, #e5a918 10%, #e5a918 90%, white 100%)' }}></div>
             
-            <div className="space-y-[70px]">
+            <div className="space-y-[64px]">
               {[
                 { date: "12/11(목) 00:00", text: "가산점 신청서 접수 시작" },
                 { date: "12/13(토) 23:59", text: "가산점 신청서 접수 마감" },
@@ -183,9 +195,9 @@ export default function AnnouncementsPage() {
           </div>
         </section>
 
-        {/* 페이지 네비게이션 */}
-        <PageNavigation currentPath="/notice" />
       </div>
     </main>
+    <Footer />
+    </>
   );
 }

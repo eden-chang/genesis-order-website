@@ -10,6 +10,10 @@
 @layer base {
   * {
     @apply border-gray-300;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 
   body {
@@ -24,20 +28,24 @@
 @layer components {
   .section-title {
     font-family: var(--font-eb-garamond), serif;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #e4a408;
-    background-color: #fff2cc;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
+    background: linear-gradient(45deg, #cc7a00, #ffd769);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     display: inline-block;
   }
 
   @media (min-width: 768px) {
     .section-title {
-      font-size: 2.25rem;
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-title {
+      font-size: 3.75rem;
     }
   }
 

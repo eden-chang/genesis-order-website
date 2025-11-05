@@ -1,30 +1,48 @@
 'use client';
 
 import Link from "next/link";
-import PageNavigation from "@/components/layout/PageNavigation";
 import Footnote from "@/components/content/Footnote";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import PowerPyramid from "@/components/ui/PowerPyramid";
 
 export default function WorldviewPage() {
   return (
-    <main className="min-h-screen px-4 pt-2 pb-16 bg-white">
+    <>
+      <Header />
+      <main className="min-h-screen px-4 pt-[84px] pb-12 bg-white">
       <div className="max-w-3xl mx-auto">
-        {/* 상단 네비게이션 */}
-        <PageNavigation currentPath="/world" position="top" />
 
         <div className="text-center my-12">
           <h1 className="section-title mb-4">World</h1>
-          <p className="text-lg md:text-xl text-[#0b0b0b] font-heading">세계관</p>
+          <p className="text-lg md:text-xl text-[rgb(215,145,24)] font-heading">세계관</p>
         </div>
 
         {/* Notice */}
-        <section className="mb-16 p-6 bg-transparent rounded-lg border-2 border-[#e4a408]">
-          <div className="space-y-1 text-sm text-[#0b0b0b] leading-normal text-center">
-            <p>본 커뮤니티는 현실의 종교적 요소에서 일부 모티브를 얻은 <strong>창작물</strong>입니다.</p>
-            <p>운영진은 실존하는 어떠한 종교, 교단, 신앙 체계도 옹호하거나 비난하지 않습니다.</p>
-            <p>모든 설정은 <strong>가상의 세계관 내 서사적 장치</strong>로만 사용됩니다.</p>
-            <br />
-            <p className="mt-6">본 커뮤니티의 세계관은<strong className="text-[#d4990a]">〈구약 성경〉</strong>및 마거릿 애트우드의 소설<strong className="text-[#d4990a]">〈시녀 이야기〉</strong>에서 영감을 받았습니다.</p>
+        <section className="mb-16">
+          <div className="relative overflow-hidden p-6 rounded-lg border-2 border-[#e4a408]">
+            {/* Background Image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm scale-[1.3]"
+              style={{ backgroundImage: 'url(/content-warning-bg.png)' }}
+            />
+            {/* White Overlay */}
+            <div className="absolute inset-0 bg-white opacity-60" />
+
+            {/* Content */}
+            <div className="relative z-10 space-y-1 text-sm text-[rgb(194,110,0)] leading-normal text-center">
+              <p>본 커뮤니티는 현실의 종교적 요소에서 일부 모티브를 얻은 <strong>창작물</strong>입니다.</p>
+              <p>운영진은 실존하는 어떠한 종교, 교단, 신앙 체계도 옹호하거나 비난하지 않습니다.</p>
+              <p>모든 설정은 <strong>가상의 세계관 내 서사적 장치</strong>로만 사용됩니다.</p>
+              <br />
+              <p className="mt-6">본 커뮤니티의 세계관은<strong>〈구약 성경〉</strong>및 마거릿 애트우드의 소설<strong>〈시녀 이야기〉</strong>에서 영감을 받았습니다.</p>
+            </div>
           </div>
+        </section>
+
+        {/* 권력 구조 피라미드 */}
+        <section className="mb-16">
+          <PowerPyramid />
         </section>
 
         {/* I. 창세교의 씨앗 */}
@@ -53,7 +71,7 @@ export default function WorldviewPage() {
           </h2>
           <div className="space-y-4 text-[10.5pt] md:text-[11.5pt] text-[#0b0b0b] font-sans leading-normal md:leading-relaxed [&>p]:indent-[1em]">
             <p>창세교의 세력이 걷잡을 수 없이 팽창하자, 미국 서부에서는 이들을 ‘사이비’로 규정하고 척결해야 한다는 주장이 힘을 얻기 시작했다. 결국 1933년 12월, 자본주의를 주시하는 미 서부와 창세교를 따르는 미 동부 간의 이념 전쟁, 즉 <Footnote term="정화전(The Purgation)" definition="淨化戰. 1933년 12월부터 1937년 12월 25일까지 이어진 종교 전쟁이자 내전." id="----the-purgation-" />이 발발했다.</p>
-            <p>전쟁은 4년간의 치열한 사투 끝에 1937년 12월 25일, 오랜 내전으로 지지 기반을 잃어버린 미국 대통령 프랭클린 D. 루스벨트가 실각하며 동부 창세교 세력의 승리로 종결되었다. 승리에 도취한 창세교 신도들은 미국 민주주의의 상징인 백악관을 허물고, 그 터 위에 장엄한 대성당을 세웠다. <Footnote term="성좌(Constellarch)" definition="신의 유일한 사자이자 창세교 최고 지도자." id="---constellarch-" />는 이날을 창세교의 승리를 기념하고 ‘원점으로의 회귀’를 천명하는 <Footnote term="정화 축일(Yom Genesis)" definition="정화전의 종전 기념일. 창세교에서는 매년 12월 25일을 정화 축일로서 기념한다." id="------yom-genesis-" />로 선포하였다.</p>
+            <p>전쟁은 4년간의 치열한 사투 끝에 1937년 12월 25일, 오랜 내전으로 지지 기반을 잃어버린 미국 대통령 프랭클린 D. 루스벨트가 실각하며 동부 창세교 세력의 승리로 종결되었다. 승리에 도취한 창세교 신도들은 미국 민주주의의 상징인 백악관을 허물고, 그 터 위에 장엄한 대성당을 세웠다. <Footnote term="성좌" definition="신의 유일한 사자이자 창세교 최고 지도자." id="---constellarch-" />는 이날을 창세교의 승리를 기념하고 ‘원점으로의 회귀’를 천명하는 <Footnote term="정화 축일(Yom Genesis)" definition="정화전의 종전 기념일. 창세교에서는 매년 12월 25일을 정화 축일로서 기념한다." id="------yom-genesis-" />로 선포하였다.</p>
           </div>
         </section>
 
@@ -94,7 +112,8 @@ export default function WorldviewPage() {
             </span>
           </h2>
           <div className="space-y-4 text-[10.5pt] md:text-[11.5pt] text-[#0b0b0b] font-sans leading-normal md:leading-relaxed [&>p]:indent-[1em]">
-            <p>길리아드와 소련은 극명하게 대립하면서도 직접적으로 충돌하지는 않았다. 길리아드는 정화전 승리 후 북미와 남미를 통합하고 통치 체제를 확립하는 데 집중하였으며, 소련 역시 제1차 세계대전의 피해를 수습하고 혁명의 결실을 다지는 데 전력을 쏟았다. 외세에 집중할 여력이 없다는 이해관계가 맞물리면서 두 세력은 표면상으로는 평화를 유지했다. 그러나 국가의 기틀이 안정되어 갈 수록, 서로를 ‘신성모독자’, ‘봉건적 기만 세력’이라 부르며 체제 우위를 주장하는 냉정한 대립 구도가 형성되었는데, 이것이 곧 냉전의 서막이었다.</p>
+            <p>길리아드와 소련은 극명하게 대립하면서도 직접적으로 충돌하지는 않았다. 길리아드는 정화전 승리 후 북미와 남미를 통합하고 통치 체제를 확립하는 데 집중하였으며, 소련 역시 제1차 세계대전의 피해를 수습하고 혁명의 결실을 다지는 데 전력을 쏟았다. 외세에 집중할 여력이 없다는 이해관계가 맞물리면서 두 세력은 표면상으로는 평화를 유지했다.</p>
+            <p>그러나 국가의 기틀이 안정되어 갈 수록, 서로를 '신성모독자', '봉건적 기만 세력'이라 부르며 체제 우위를 주장하는 냉정한 대립 구도가 형성되었는데, 이것이 곧 냉전의 서막이었다.</p>
           </div>
         </section>
 
@@ -123,14 +142,15 @@ export default function WorldviewPage() {
             </span>
           </h2>
           <div className="space-y-4 text-[10.5pt] md:text-[11.5pt] text-[#0b0b0b] font-sans leading-normal md:leading-relaxed [&>p]:indent-[1em]">
-            <p>현재로 돌아와 1965년 12월, 길리아드의 <Footnote term="영사(Magistrate)" definition="신앙과 경제력을 갖춘 지배 계층." id="---magistrate-" /> 중 한 명인 빅터 K. 할덴(Victor K. Halden)을 조명한다. 그는 알래스카 지역의 석유 산업을 총괄하는 거대 자본가이며, 자선활동의 일환으로 음악 신학교를 후원하고 있다. 17년 전 아내와 사별했으며, 그의 유일한 가족은 아들인 데이비드다.</p>
+            <p>현재로 돌아와 1965년 12월, 길리아드의 <Footnote term="영사" definition="신앙과 경제력을 갖춘 지배 계층." id="---magistrate-" /> 중 한 명인 빅터 K. 할덴(Victor K. Halden)을 조명한다. 그는 알래스카 지역의 석유 산업을 총괄하는 거대 자본가이며, 자선활동의 일환으로 음악 신학교를 후원하고 있다. 17년 전 아내와 사별했으며, 그의 유일한 가족은 아들인 데이비드다.</p>
             <p>할덴 영사는 곧 다가올 정화 축일을 기념하여 특별한 교류회를 주최했다. ‘<Footnote term="에덴(Eden)" definition="모든 것의 원점이자 이상 세계." id="---eden-" />의 만찬’이라 이름 붙인 이 모임은 동서 화합과 친목, 음악회를 겸한 장이었다. 알래스카의 호화로운 대저택에 30여 명의 참가자들이 초청되었다. 참가자는 길리아드와 다른 약속의 땅 출신뿐만 아니라, 적대적인 공산주의 진영과 중립적인 북유럽 지역의 인물까지 포함되었다. 계층에 구애받지 않은 다양한 배경의 사람들이 모여 일주일간 즐거운 시간을 보낼 예정이었다.</p>
             <p>이 저택에서 살인 사건이 벌어지기 전까지는 말이다.</p>
           </div>
         </section>
 
-        <PageNavigation currentPath="/world" />
       </div>
     </main>
+    <Footer />
+    </>
   );
 }

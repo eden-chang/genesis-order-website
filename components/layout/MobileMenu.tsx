@@ -38,7 +38,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         {/* X 닫기 버튼 - 살짝 작게, 위쪽, 오른쪽 */}
         <button
           onClick={onClose}
-          className="absolute top-2 right-3 w-10 h-10 flex items-center justify-center text-[#e4a408] hover:text-[#d4990a] transition-colors z-[100]"
+          className="absolute top-2 right-3 w-10 h-10 flex items-center justify-center text-[#39313F] hover:text-[#50435d] transition-colors z-[100]"
           aria-label="메뉴 닫기"
         >
           <svg
@@ -60,7 +60,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <li>
               <Link
                 href="/notice"
-                className="font-heading text-lg text-[#844a00] hover:text-[#e4a408] transition-colors block"
+                className="text-lg text-[#39313F] hover:text-[#89818e] transition-colors block"
+                style={{ fontFamily: 'var(--font-pretendard-semibold)' }}
                 onClick={onClose}
               >
                 공지
@@ -69,7 +70,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <li>
               <Link
                 href="/world"
-                className="font-heading text-lg text-[#844a00] hover:text-[#e4a408] transition-colors block"
+                className="text-lg text-[#39313F] hover:text-[#89818e] transition-colors block"
+                style={{ fontFamily: 'var(--font-pretendard-semibold)' }}
                 onClick={onClose}
               >
                 세계관
@@ -78,7 +80,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <li>
               <Link
                 href="/system"
-                className="font-heading text-lg text-[#844a00] hover:text-[#e4a408] transition-colors block"
+                className="text-lg text-[#39313F] hover:text-[#89818e] transition-colors block"
+                style={{ fontFamily: 'var(--font-pretendard-semibold)' }}
                 onClick={onClose}
               >
                 시스템
@@ -87,7 +90,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <li>
               <Link
                 href="/character"
-                className="font-heading text-lg text-[#844a00] hover:text-[#e4a408] transition-colors block"
+                className="text-lg text-[#39313F] hover:text-[#89818e] transition-colors block"
+                style={{ fontFamily: 'var(--font-pretendard-semibold)' }}
                 onClick={onClose}
               >
                 캐릭터
@@ -96,7 +100,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <li>
               <Link
                 href="/application"
-                className="font-heading text-lg text-[#844a00] hover:text-[#e4a408] transition-colors block"
+                className="text-lg text-[#39313F] hover:text-[#89818e] transition-colors block"
+                style={{ fontFamily: 'var(--font-pretendard-semibold)' }}
                 onClick={onClose}
               >
                 신청서
@@ -105,7 +110,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <li>
               <Link
                 href="/questions"
-                className="font-heading text-lg text-[#844a00] hover:text-[#e4a408] transition-colors block"
+                className="text-lg text-[#39313F] hover:text-[#89818e] transition-colors block"
+                style={{ fontFamily: 'var(--font-pretendard-semibold)' }}
                 onClick={onClose}
               >
                 QNA

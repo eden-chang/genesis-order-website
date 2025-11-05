@@ -361,7 +361,7 @@ export default function PowerPyramid() {
                 {hierarchyData[hoveredLevel].hanjaDescription}
               </p>
 
-              <p className="text-sm text-[#3d2200] leading-relaxed pt-1 tracking-[-0.03em] md:tracking-normal">
+              <p className="text-sm text-[#2f2c31] leading-relaxed pt-1 tracking-[-0.03em] md:tracking-normal">
                 {hierarchyData[hoveredLevel].description}
               </p>
             </div>
@@ -397,7 +397,7 @@ export default function PowerPyramid() {
                 {hierarchyData[clickedLevel].hanjaDescription}
               </p>
 
-              <p className="text-sm text-[#3d2200] leading-relaxed pt-1 tracking-[-0.03em]">
+              <p className="text-sm text-[#2f2c31] leading-relaxed pt-1 tracking-[-0.03em]">
                 {hierarchyData[clickedLevel].description}
               </p>
             </div>

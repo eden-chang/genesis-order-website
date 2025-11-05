@@ -9,21 +9,21 @@ export default function Footer() {
       <div className="max-w-2xl mx-auto text-center">
         <div className="relative w-[100px] h-[53px] mx-auto mb-4">
           <Image
-            src="/logo.png"
+            src="/images/logo.png"
             alt="Genesis Order Logo"
             fill
             className="object-contain"
           />
         </div>
         <nav className="flex flex-wrap justify-center gap-4 md:gap-6 mb-4">
-          <Link href="/notice" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">공지</Link>
-          <Link href="/world" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">세계관</Link>
-          <Link href="/system" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">시스템</Link>
-          <Link href="/character" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">가이드</Link>
-          <Link href="/application" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">신청서</Link>
+          <Link href="/notice" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>공지</Link>
+          <Link href="/world" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>세계관</Link>
+          <Link href="/system" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>시스템</Link>
+          <Link href="/character" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>가이드</Link>
+          <Link href="/application" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>신청서</Link>
         </nav>
         <div className="pt-4 border-t border-[#f2f2f2]">
-          <p className="font-sans text-xs text-[#844a00] text-center">© 2025 Genesis Order</p>
+          <p className="text-xs text-[#655e69] text-center" style={{ fontFamily: 'var(--font-pretendard-light)' }}>© 2025 Genesis Order</p>
         </div>
       </div>
     </footer>

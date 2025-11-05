@@ -38,13 +38,13 @@ export default function ScrollDownButton() {
       aria-label="Scroll to bottom"
     >
       <svg
-        className="w-6 h-6 md:w-8 md:h-8 text-white transition-colors"
+        className="w-6 h-6 md:w-8 md:h-8 transition-colors"
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"
         viewBox="0 0 24 24"
-        stroke="currentColor"
+        stroke="#2F2C31"
       >
         <path d="M19 9l-7 7-7-7"></path>
       </svg>

@@ -6,25 +6,17 @@ export default function AnnouncementsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen px-4 pt-[84px] pb-12 bg-white">
+      <main className="min-h-screen px-4 pt-[84px] pb-12">
       <div className="max-w-3xl mx-auto">
 
         <div className="text-center my-12">
-          <h1 className="section-title mb-4">Notice</h1>
-          <p className="text-lg text-[rgb(215,145,24)] font-heading">공지사항</p>
+          <h1 className="section-title mb-4">NOTICE</h1>
+          <p className="text-lg text-[#423e43]" style={{ fontFamily: 'var(--font-noto-serif-kr)' }}>공지사항</p>
         </div>
 
         {/* Content Warning */}
         <section className="mb-16">
-          <div className="relative border-2 border-[#e5a918] overflow-hidden p-6 text-center rounded-lg">
-            {/* Background Image */}
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm scale-[1.3]"
-              style={{ backgroundImage: 'url(/content-warning-bg.png)' }}
-            />
-            {/* White Overlay */}
-            <div className="absolute inset-0 bg-white opacity-60" />
-
+          <div className="relative border-2 border-[#e5a918] overflow-hidden p-6 text-center rounded-lg bg-transparent">
             {/* Content */}
             <div className="relative z-10">
               <h2 className="text-base font-bold italic text-[rgb(194,110,0)] mb-4 font-baskervville">
@@ -64,7 +56,7 @@ export default function AnnouncementsPage() {
                 return (
                   <div key={index} className="relative flex items-center justify-center group">
                     {/* 타임라인 마커 - 모바일: 왼쪽, 데스크톱: 중앙 */}
-                    <div className="absolute left-4 md:left-1/2 flex items-center justify-center w-3 h-3 -translate-x-1/2 pointer-events-none">
+                    <div className="absolute left-[11px] md:left-1/2 flex items-center justify-center w-3 md:w-3 md:h-3 md:-translate-x-1/2 pointer-events-none">
                       <div className="relative w-3 h-3 rounded-full bg-[#e5a918] border-2 border-white group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)] transition-all duration-200"></div>
                     </div>
 
@@ -75,7 +67,7 @@ export default function AnnouncementsPage() {
                           {item.date}
                         </div>
                       </div>
-                      <div className="text-[#3d2200] leading-normal transition-all duration-200 group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)] tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+                      <div className="text-[#2f2c31] leading-normal transition-all duration-200 group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)] tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
                         {item.text}
                       </div>
                     </div>
@@ -93,7 +85,7 @@ export default function AnnouncementsPage() {
               <span className="font-baskervville font-bold italic">Notice</span>
             </span>
           </h2>
-          <div className="space-y-3 text-[#3d2200] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+          <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
             {[
               <span key="1">본 문서는 자캐 커뮤니티<strong>〈Genesis Order〉</strong>의 공지사항 문서입니다.</span>,
               <span key="2">본 커뮤니티는 <strong>성인 연령가</strong>입니다. <strong>06년생</strong> 이상만 신청서를 제출할 수 있습니다.</span>,
@@ -111,8 +103,8 @@ export default function AnnouncementsPage() {
               "운영진은 공지 미숙지로 인해 발생하는 일에 책임을 지지 않습니다.",
             ].map((text, index) => (
               <div key={index} className="flex items-start leading-normal md:leading-relaxed">
-                <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                  ✶
+                <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+                  ⦿
                 </span>
                 <span>{text}</span>
               </div>
@@ -127,29 +119,29 @@ export default function AnnouncementsPage() {
               <span className="font-baskervville font-bold italic">Rules</span>
             </span>
           </h2>
-          <div className="space-y-3 text-[#3d2200] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+          <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
             <div className="flex items-start leading-normal md:leading-relaxed">
-              <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                ✶
+              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+                ⦿
               </span>
               <span>본 커뮤니티는 경고 제도를 사용합니다. 경고 3회 누적 시 제명됩니다.</span>
             </div>
             <div className="flex items-start leading-normal md:leading-relaxed">
-              <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                ✶
+              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+                ⦿
               </span>
               <span>제명된 캐릭터는 커뮤니티 내에서 처음부터 존재하지 않았던 인물이 됩니다.</span>
             </div>
             <div className="flex items-start leading-normal md:leading-relaxed">
-              <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                ✶
+              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+                ⦿
               </span>
               <span>본 커뮤니티는 시리어스 커뮤니티이나, 어느 정도의 개그 멘트를 허용합니다. 다만 스토리 진행 시에는 개그 분위기가 형성되지 않도록 주의 부탁드립니다.</span>
             </div>
 
             <div className="flex items-start leading-normal md:leading-relaxed">
-              <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                ✶
+              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+                ⦿
               </span>
               <span>경고 사항은 다음과 같습니다.</span>
             </div>
@@ -170,8 +162,8 @@ export default function AnnouncementsPage() {
             </div>
 
             <div className="flex items-start leading-normal md:leading-relaxed mt-6">
-              <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                ✶
+              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+                ⦿
               </span>
               <span>제명 사항은 다음과 같습니다.</span>
             </div>

@@ -6,11 +6,11 @@ export default function QnAPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen px-4 pt-[84px] pb-12 bg-white">
+      <main className="min-h-screen px-4 pt-[84px] pb-12">
         <div className="max-w-3xl mx-auto">
           <div className="text-center my-12">
             <h1 className="section-title mb-4">Q&A</h1>
-            <p className="text-xl text-[rgb(215,145,24)] font-heading">질의응답</p>
+            <p className="text-xl text-[#423e43]" style={{ fontFamily: 'var(--font-noto-serif-kr)' }}>질의응답</p>
           </div>
           <div className="document-content">
             <p className="text-gray-600">질의응답 내용이 여기에 표시됩니다.</p>

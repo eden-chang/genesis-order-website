@@ -6,11 +6,11 @@ export default function ApplicationPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen px-4 pt-[84px] pb-12 bg-white">
+      <main className="min-h-screen px-4 pt-[84px] pb-12">
         <div className="max-w-3xl mx-auto">
           <div className="text-center my-12">
-            <h1 className="section-title mb-4">Application Form</h1>
-            <p className="text-xl text-[rgb(215,145,24)] font-heading">신청서 양식</p>
+            <h1 className="section-title mb-4">APPLICATION FORM</h1>
+            <p className="text-xl text-[#423e43]" style={{ fontFamily: 'var(--font-noto-serif-kr)' }}>신청서 양식</p>
           </div>
           <div className="document-content">
             <p className="text-gray-600">신청서 양식이 여기에 표시됩니다.</p>

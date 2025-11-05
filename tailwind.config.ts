@@ -19,7 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['kopubworld-dotum', 'var(--font-noto-sans)', 'sans-serif'],
-        heading: ['var(--font-diphylleia)', 'serif'],
+        heading: ['var(--font-pretendard-medium)', 'sans-serif'],
         'heading-en': ['var(--font-eb-garamond)', 'serif'],
         'baskervville': ['var(--font-baskervville)', 'serif'],
       },

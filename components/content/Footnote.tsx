@@ -114,7 +114,7 @@ export default function Footnote({ term, definition, id }: FootnoteProps) {
               invisible group-hover:visible absolute top-full mt-2
               w-[calc(100vw-40px)] max-w-96 p-4
               bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg
-              text-xs md:text-sm text-[#3d2200] font-normal z-10 indent-0
+              text-xs md:text-sm text-[#2f2c31] font-normal z-10 indent-0
               tracking-[-0.03em] md:tracking-normal
               ${popoverPosition === 'left' ? 'left-0' : ''}
               ${popoverPosition === 'right' ? 'right-0' : ''}
@@ -138,7 +138,7 @@ export default function Footnote({ term, definition, id }: FootnoteProps) {
           {/* 각주 박스 */}
           <div
             ref={modalRef}
-            className="relative w-[calc(100vw-40px)] max-w-sm mx-auto p-4 bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg text-[10.5pt] text-[#3d2200] font-normal z-10 indent-0"
+            className="relative w-[calc(100vw-40px)] max-w-sm mx-auto p-4 bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg text-[10.5pt] text-[#2f2c31] font-normal z-10 indent-0"
             onClick={(e) => e.stopPropagation()}
             style={{ wordBreak: 'keep-all' }}
           >

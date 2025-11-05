@@ -1,6 +1,6 @@
 "use client";
 
-import { Noto_Sans_KR, EB_Garamond, Baskervville, Nanum_Myeongjo } from "next/font/google";
+import { Noto_Sans_KR, Noto_Serif_KR, EB_Garamond, Baskervville } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { useEffect } from "react";
@@ -13,18 +13,18 @@ const notoSansKR = Noto_Sans_KR({
   display: "swap",
 });
 
-// 나눔명조
-const nanumMyeongjo = Nanum_Myeongjo({
+// 나눔명조 대체: Noto Serif Korean
+const notoSerifKR = Noto_Serif_KR({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-nanum-myeongjo",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-noto-serif-kr",
   display: "swap",
 });
 
-// 한글 제목 폰트: Diphylleia (로컬 파일)
-const diphylleia = localFont({
-  src: "../public/fonts/Diphylleia-Regular.ttf",
-  variable: "--font-diphylleia",
+// 한글 제목 폰트: Pretendard Medium (로컬 파일)
+const pretendardMedium = localFont({
+  src: "../public/fonts/Pretendard-Medium.ttf",
+  variable: "--font-pretendard-medium",
   display: "swap",
 });
 
@@ -41,6 +41,34 @@ const baskervville = Baskervville({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-baskervville",
+  display: "swap",
+});
+
+// 페이지 제목 폰트: Proxima Nova Black (로컬 파일)
+const proximanovaBlack = localFont({
+  src: "../public/fonts/proximanova_black.ttf",
+  variable: "--font-proximanova-black",
+  display: "swap",
+});
+
+// 네비게이션 폰트: Pretendard SemiBold (로컬 파일)
+const pretendardSemiBold = localFont({
+  src: "../public/fonts/Pretendard-SemiBold.ttf",
+  variable: "--font-pretendard-semibold",
+  display: "swap",
+});
+
+// 푸터 폰트: Pretendard Regular (로컬 파일)
+const pretendardRegular = localFont({
+  src: "../public/fonts/Pretendard-Regular.ttf",
+  variable: "--font-pretendard-regular",
+  display: "swap",
+});
+
+// 푸터 저작권 폰트: Pretendard Light (로컬 파일)
+const pretendardLight = localFont({
+  src: "../public/fonts/Pretendard-Light.ttf",
+  variable: "--font-pretendard-light",
   display: "swap",
 });
 
@@ -90,13 +118,13 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="ko" className={`${notoSansKR.variable} ${nanumMyeongjo.variable} ${diphylleia.variable} ${ebGaramond.variable} ${baskervville.variable}`}>
+    <html lang="ko" className={`${notoSansKR.variable} ${notoSerifKR.variable} ${pretendardMedium.variable} ${ebGaramond.variable} ${baskervville.variable} ${proximanovaBlack.variable} ${pretendardSemiBold.variable} ${pretendardRegular.variable} ${pretendardLight.variable}`}>
       <head>
         <title>Genesis Order - 창세의 질서</title>
         <meta name="description" content="Genesis Order 세계관 문서" />
         <meta name="keywords" content="Genesis Order, 창세의 질서, 세계관, TRPG" />
       </head>
-      <body className="font-sans antialiased bg-white text-[#3d2200]">
+      <body className="font-sans antialiased text-[#2f2c31]">
         {children}
       </body>
     </html>

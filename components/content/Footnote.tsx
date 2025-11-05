@@ -10,6 +10,7 @@ interface FootnoteProps {
 
 export default function Footnote({ term, definition, id }: FootnoteProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [popoverPosition, setPopoverPosition] = useState<'left' | 'right' | 'center'>('left');
   const footnoteRef = useRef<HTMLSpanElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -41,15 +42,55 @@ export default function Footnote({ term, definition, id }: FootnoteProps) {
   }, [isMobileOpen]);
 
   const [isMobile, setIsMobile] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
+  // 터치 기기 및 화면 크기 감지
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkDevice = () => {
+      const isTouch = window.matchMedia('(pointer: coarse)').matches;
+      const isSmallScreen = window.innerWidth < 768;
+      setIsTouchDevice(isTouch);
+      setIsMobile(isSmallScreen);
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    return () => window.removeEventListener('resize', checkDevice);
   }, []);
+
+  // 팝오버 위치 계산
+  const calculatePopoverPosition = () => {
+    if (!footnoteRef.current) return;
+
+    const rect = footnoteRef.current.getBoundingClientRect();
+    const popoverWidth = 384; // max-w-96 = 24rem = 384px
+    const margin = 20;
+
+    const spaceOnRight = window.innerWidth - rect.right;
+    const spaceOnLeft = rect.left;
+
+    // 오른쪽 공간이 충분한 경우
+    if (spaceOnRight >= popoverWidth + margin) {
+      setPopoverPosition('left');
+    }
+    // 왼쪽 공간이 충분한 경우
+    else if (spaceOnLeft >= popoverWidth + margin) {
+      setPopoverPosition('right');
+    }
+    // 양쪽 다 부족한 경우 중앙 정렬
+    else {
+      setPopoverPosition('center');
+    }
+  };
+
+  // 리사이즈 시 위치 재계산
+  useEffect(() => {
+    calculatePopoverPosition();
+    window.addEventListener('resize', calculatePopoverPosition);
+    return () => window.removeEventListener('resize', calculatePopoverPosition);
+  }, []);
+
+  // 모달을 사용할지 팝오버를 사용할지 결정
+  const shouldUseModal = isMobile || isTouchDevice;
 
   return (
     <>
@@ -58,22 +99,37 @@ export default function Footnote({ term, definition, id }: FootnoteProps) {
         className="relative group cursor-help border-b border-dotted border-[#d4990a] text-[#d4990a] font-bold"
         onClick={(e) => {
           e.stopPropagation();
-          // 모바일에서만 클릭 이벤트 처리
-          if (isMobile) {
+          // 터치 기기이거나 작은 화면에서만 클릭 이벤트 처리
+          if (shouldUseModal) {
             setIsMobileOpen(true);
           }
         }}
+        onMouseEnter={calculatePopoverPosition}
       >
         {term}
-        {/* 데스크톱 hover 툴팁 */}
-        <span className="invisible group-hover:visible absolute left-0 top-full md:left-0 mt-2 w-[calc(100vw-20px)] max-w-96 p-4 bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg text-xs md:text-sm text-[#0b0b0b] font-normal z-10 hidden md:block indent-0">
-          {definition}
-        </span>
+        {/* 데스크톱 hover 팝오버 - 터치 기기가 아닌 경우에만 표시 */}
+        {!shouldUseModal && (
+          <span
+            className={`
+              invisible group-hover:visible absolute top-full mt-2
+              w-[calc(100vw-40px)] max-w-96 p-4
+              bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg
+              text-xs md:text-sm text-[#3d2200] font-normal z-10 indent-0
+              tracking-[-0.03em] md:tracking-normal
+              ${popoverPosition === 'left' ? 'left-0' : ''}
+              ${popoverPosition === 'right' ? 'right-0' : ''}
+              ${popoverPosition === 'center' ? 'left-1/2 -translate-x-1/2' : ''}
+            `}
+            style={{ wordBreak: 'keep-all' }}
+          >
+            {definition}
+          </span>
+        )}
       </span>
 
-      {/* 모바일 모달 */}
-      {isMobileOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center md:hidden">
+      {/* 모바일/터치 기기 모달 */}
+      {isMobileOpen && shouldUseModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
           {/* 배경 오버레이 */}
           <div
             className="absolute inset-0 bg-black/30"
@@ -82,11 +138,12 @@ export default function Footnote({ term, definition, id }: FootnoteProps) {
           {/* 각주 박스 */}
           <div
             ref={modalRef}
-            className="relative w-[calc(100vw-20px)] max-w-sm mx-auto p-4 bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg text-[10.5pt] text-[#0b0b0b] font-normal z-10 indent-0"
+            className="relative w-[calc(100vw-40px)] max-w-sm mx-auto p-4 bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg text-[10.5pt] text-[#3d2200] font-normal z-10 indent-0"
             onClick={(e) => e.stopPropagation()}
+            style={{ wordBreak: 'keep-all' }}
           >
-            <div className="font-bold text-[rgb(212,153,10)] mb-2">{term}</div>
-            <div>{definition}</div>
+            <div className="font-bold text-[rgb(212,153,10)] mb-2 tracking-[-0.03em]">{term}</div>
+            <div className="tracking-[-0.03em]">{definition}</div>
           </div>
         </div>
       )}

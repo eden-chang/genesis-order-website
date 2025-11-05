@@ -89,7 +89,7 @@ export default function Home() {
         {/* Story Section */}
         <section className="py-16 md:py-20 px-4 md:px-8 bg-white">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="space-y-2 text-[11pt] text-[#0b0b0b] leading-normal" style={{ fontFamily: 'var(--font-nanum-myeongjo)', wordBreak: 'keep-all', letterSpacing: '-0.01em' }}>
+            <div className="space-y-2 text-[#3d2200] leading-normal tracking-[-0.03em] md:tracking-[-0.01em]" style={{ fontFamily: 'var(--font-nanum-myeongjo)', wordBreak: 'keep-all' }}>
               <p>제정일치 국가 &apos;길리아드&apos;가 되어 세계를 삼킨 미국과 소련을 비롯한 공산주의 진영 간의 냉전이 진행되는 시대</p>
               <br />
               <p>1965년, 알래스카 지역을 관리하는 어느 영사가 정화 축일을 기념하여 자선 음악회를 개최한다</p>
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="section-title mb-4">Explore</h2>
-              <p className="text-lg md:text-xl text-[rgb(215,145,24)] font-heading">통합 문서</p>
+              <p className="text-lg text-[rgb(215,145,24)] font-heading">통합 문서</p>
             </div>
 
             {/* Cards Grid */}
@@ -122,7 +122,7 @@ export default function Home() {
                 >
                   <div className="relative w-full h-[120px] bg-gradient-to-br from-[#fff2cc] to-[#ffe599]"></div>
                   <div className="p-4 bg-white text-left">
-                    <h3 className="font-heading text-lg md:text-xl mb-2 text-[#0b0b0b]">{page.title}</h3>
+                    <h3 className="font-heading text-lg mb-2 text-[#3d2200]">{page.title}</h3>
                     <p className="text-xs text-[#55534c] font-sans">{page.subtitle}</p>
                   </div>
                 </Link>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface HierarchyLevel {
   name: string;
@@ -53,19 +53,85 @@ const hierarchyData: HierarchyLevel[] = [
 
 export default function PowerPyramid() {
   const [hoveredLevel, setHoveredLevel] = useState<number | null>(null);
+  const [clickedLevel, setClickedLevel] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [popoverPosition, setPopoverPosition] = useState<'left' | 'right' | 'center'>('left');
+
+  // 터치 기기 및 화면 크기 감지
+  useEffect(() => {
+    const checkDevice = () => {
+      const isTouch = window.matchMedia('(pointer: coarse)').matches;
+      const isSmallScreen = window.innerWidth < 768;
+      setIsTouchDevice(isTouch);
+      setIsMobile(isSmallScreen);
+    };
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    return () => window.removeEventListener('resize', checkDevice);
+  }, []);
+
+  // 팝오버 위치 계산
+  const calculatePopoverPosition = () => {
+    const popoverWidth = 330; // 팝오버 너비
+    const margin = 20;
+    const windowWidth = window.innerWidth;
+
+    // SVG 컨테이너의 대략적인 중앙 위치 (65% 지점)
+    const popoverLeft = windowWidth * 0.65;
+    const spaceOnRight = windowWidth - popoverLeft;
+
+    // 오른쪽 공간이 충분한 경우
+    if (spaceOnRight >= popoverWidth + margin) {
+      setPopoverPosition('left');
+    }
+    // 왼쪽으로 배치
+    else if (popoverLeft >= popoverWidth + margin) {
+      setPopoverPosition('right');
+    }
+    // 양쪽 다 부족한 경우 중앙 정렬
+    else {
+      setPopoverPosition('center');
+    }
+  };
+
+  // 리사이즈 시 위치 재계산
+  useEffect(() => {
+    calculatePopoverPosition();
+    window.addEventListener('resize', calculatePopoverPosition);
+    return () => window.removeEventListener('resize', calculatePopoverPosition);
+  }, []);
+
+  // 모달을 사용할지 팝오버를 사용할지 결정
+  const shouldUseModal = isMobile || isTouchDevice;
+
+  // 모바일/터치 기기 모달 외부 클릭 감지
+  useEffect(() => {
+    if (clickedLevel !== null && shouldUseModal) {
+      const handleClickOutside = () => {
+        setClickedLevel(null);
+      };
+      document.addEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.removeEventListener('click', handleClickOutside);
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [clickedLevel, shouldUseModal]);
 
   return (
-    <div className="w-full max-w-xl mx-auto py-12 relative">
-      <h2 className="text-xl md:text-2xl font-bold mb-8 text-center">
+    <div className="w-full max-w-xl mx-auto py-12 relative px-4 md:px-0">
+      <h2 className="text-xl font-bold mb-8 text-center">
         <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded inline-block">
           <span className="font-heading">권력 구조</span>
         </span>
       </h2>
 
-      <div className="relative">
+      <div className="relative overflow-x-hidden flex justify-center -mx-4 md:mx-0">
         <svg
           viewBox="0 0 400 320"
-          className="w-[90%] h-auto mx-auto"
+          className="w-[110%] md:w-[90%] h-auto mx-auto"
           xmlns="http://www.w3.org/2000/svg"
         >
         {/* 정의: 그라데이션 */}
@@ -89,8 +155,19 @@ export default function PowerPyramid() {
 
         {/* 1층: 성좌 (최상단) */}
         <g
-          onMouseEnter={() => setHoveredLevel(0)}
-          onMouseLeave={() => setHoveredLevel(null)}
+          onMouseEnter={() => {
+            if (!shouldUseModal) {
+              calculatePopoverPosition();
+              setHoveredLevel(0);
+            }
+          }}
+          onMouseLeave={() => !shouldUseModal && setHoveredLevel(null)}
+          onClick={(e) => {
+            if (shouldUseModal) {
+              e.stopPropagation();
+              setClickedLevel(0);
+            }
+          }}
           className="cursor-help transition-all duration-300"
         >
           <path
@@ -108,12 +185,33 @@ export default function PowerPyramid() {
           >
             {hierarchyData[0].name}
           </text>
+          {/* 점선 밑줄 */}
+          <line
+            x1="189"
+            y1="75"
+            x2="211"
+            y2="75"
+            stroke="#5a3200"
+            strokeWidth="0.5"
+            strokeDasharray="1,1.5"
+          />
         </g>
 
         {/* 2층: 영사 */}
         <g
-          onMouseEnter={() => setHoveredLevel(1)}
-          onMouseLeave={() => setHoveredLevel(null)}
+          onMouseEnter={() => {
+            if (!shouldUseModal) {
+              calculatePopoverPosition();
+              setHoveredLevel(1);
+            }
+          }}
+          onMouseLeave={() => !shouldUseModal && setHoveredLevel(null)}
+          onClick={(e) => {
+            if (shouldUseModal) {
+              e.stopPropagation();
+              setClickedLevel(1);
+            }
+          }}
           className="cursor-help transition-all duration-300"
         >
           <path
@@ -131,12 +229,33 @@ export default function PowerPyramid() {
           >
             {hierarchyData[1].name}
           </text>
+          {/* 점선 밑줄 */}
+          <line
+            x1="189"
+            y1="132"
+            x2="211"
+            y2="132"
+            stroke="#5a3200"
+            strokeWidth="0.5"
+            strokeDasharray="1,1.5"
+          />
         </g>
 
         {/* 3층: 제소 */}
         <g
-          onMouseEnter={() => setHoveredLevel(2)}
-          onMouseLeave={() => setHoveredLevel(null)}
+          onMouseEnter={() => {
+            if (!shouldUseModal) {
+              calculatePopoverPosition();
+              setHoveredLevel(2);
+            }
+          }}
+          onMouseLeave={() => !shouldUseModal && setHoveredLevel(null)}
+          onClick={(e) => {
+            if (shouldUseModal) {
+              e.stopPropagation();
+              setClickedLevel(2);
+            }
+          }}
           className="cursor-help transition-all duration-300"
         >
           <path
@@ -154,12 +273,33 @@ export default function PowerPyramid() {
           >
             {hierarchyData[2].name}
           </text>
+          {/* 점선 밑줄 */}
+          <line
+            x1="189"
+            y1="197"
+            x2="211"
+            y2="197"
+            stroke="#5a3200"
+            strokeWidth="0.5"
+            strokeDasharray="1,1.5"
+          />
         </g>
 
         {/* 4층: 신도 (최하단) */}
         <g
-          onMouseEnter={() => setHoveredLevel(3)}
-          onMouseLeave={() => setHoveredLevel(null)}
+          onMouseEnter={() => {
+            if (!shouldUseModal) {
+              calculatePopoverPosition();
+              setHoveredLevel(3);
+            }
+          }}
+          onMouseLeave={() => !shouldUseModal && setHoveredLevel(null)}
+          onClick={(e) => {
+            if (shouldUseModal) {
+              e.stopPropagation();
+              setClickedLevel(3);
+            }
+          }}
           className="cursor-help transition-all duration-300"
         >
           <path
@@ -176,21 +316,35 @@ export default function PowerPyramid() {
           >
             {hierarchyData[3].name}
           </text>
+          {/* 점선 밑줄 */}
+          <line
+            x1="189"
+            y1="263"
+            x2="211"
+            y2="263"
+            stroke="#5a3200"
+            strokeWidth="0.5"
+            strokeDasharray="1,1.5"
+          />
         </g>
         </svg>
 
-        {/* 호버 팝오버 */}
-        {hoveredLevel !== null && (
+        {/* 데스크톱 호버 팝오버 - 터치 기기가 아닌 경우에만 표시 */}
+        {hoveredLevel !== null && !shouldUseModal && (
           <div
             className="absolute p-4 rounded-lg border-2 border-[#e4a408] bg-[#fffdf6] shadow-lg z-50"
             style={{
               width: '330px',
-              left: '65%',
+              left: popoverPosition === 'left' ? '65%' :
+                    popoverPosition === 'right' ? 'auto' :
+                    '50%',
+              right: popoverPosition === 'right' ? '5%' : 'auto',
               top: hoveredLevel === 0 ? 'calc(73 / 320 * 100%)' :
                    hoveredLevel === 1 ? 'calc(130 / 320 * 100%)' :
                    hoveredLevel === 2 ? 'calc(195 / 320 * 100%)' :
                    'calc(261 / 320 * 100%)',
-              transform: 'translateY(-50%)'
+              transform: popoverPosition === 'center' ? 'translate(-50%, -50%)' : 'translateY(-50%)',
+              wordBreak: 'keep-all'
             }}
           >
             <div className="space-y-2">
@@ -203,17 +357,53 @@ export default function PowerPyramid() {
                 </span>
               </div>
 
-              <p className="text-xs text-[#c1a777]">
+              <p className="text-xs text-[#c1a777] tracking-[-0.03em] md:tracking-normal">
                 {hierarchyData[hoveredLevel].hanjaDescription}
               </p>
 
-              <p className="text-sm text-[#0b0b0b] leading-relaxed pt-1">
+              <p className="text-sm text-[#3d2200] leading-relaxed pt-1 tracking-[-0.03em] md:tracking-normal">
                 {hierarchyData[hoveredLevel].description}
               </p>
             </div>
           </div>
         )}
       </div>
+
+      {/* 모바일/터치 기기 중앙 모달 */}
+      {clickedLevel !== null && shouldUseModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          {/* 배경 오버레이 */}
+          <div
+            className="absolute inset-0 bg-black/30"
+            onClick={() => setClickedLevel(null)}
+          />
+          {/* 각주 박스 */}
+          <div
+            className="relative w-[calc(100vw-40px)] max-w-sm mx-auto p-4 bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg z-10"
+            onClick={(e) => e.stopPropagation()}
+            style={{ wordBreak: 'keep-all' }}
+          >
+            <div className="space-y-2">
+              <div className="flex items-baseline gap-2">
+                <span className="font-heading font-bold text-lg text-[#d4990a]">
+                  {hierarchyData[clickedLevel].name}
+                </span>
+                <span className="font-baskervville text-sm text-[#e4a408]">
+                  {hierarchyData[clickedLevel].english}
+                </span>
+              </div>
+
+              <p className="text-xs text-[#c1a777] tracking-[-0.03em]">
+                {hierarchyData[clickedLevel].hanjaDescription}
+              </p>
+
+              <p className="text-sm text-[#3d2200] leading-relaxed pt-1 tracking-[-0.03em]">
+                {hierarchyData[clickedLevel].description}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -16,14 +16,14 @@ export default function Footer() {
           />
         </div>
         <nav className="flex flex-wrap justify-center gap-4 md:gap-6 mb-4">
-          <Link href="/notice" className="font-heading text-sm text-[#0b0b0b] hover:text-[#e4a408] transition-colors">공지</Link>
-          <Link href="/world" className="font-heading text-sm text-[#0b0b0b] hover:text-[#e4a408] transition-colors">세계관</Link>
-          <Link href="/system" className="font-heading text-sm text-[#0b0b0b] hover:text-[#e4a408] transition-colors">시스템</Link>
-          <Link href="/character" className="font-heading text-sm text-[#0b0b0b] hover:text-[#e4a408] transition-colors">가이드</Link>
-          <Link href="/application" className="font-heading text-sm text-[#0b0b0b] hover:text-[#e4a408] transition-colors">신청서</Link>
+          <Link href="/notice" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">공지</Link>
+          <Link href="/world" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">세계관</Link>
+          <Link href="/system" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">시스템</Link>
+          <Link href="/character" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">가이드</Link>
+          <Link href="/application" className="font-heading text-sm text-[#844a00] hover:text-[#e4a408] transition-colors">신청서</Link>
         </nav>
         <div className="pt-4 border-t border-[#f2f2f2]">
-          <p className="font-sans text-xs text-[#0b0b0b] text-center">© 2025 Genesis Order</p>
+          <p className="font-sans text-xs text-[#844a00] text-center">© 2025 Genesis Order</p>
         </div>
       </div>
     </footer>

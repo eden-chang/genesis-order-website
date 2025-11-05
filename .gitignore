@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+.claude/
 
 # testing
 /coverage
@@ -46,3 +47,6 @@ next-env.d.ts
 # OS
 .DS_Store
 Thumbs.db
+
+# Windows reserved names
+nul

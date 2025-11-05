@@ -34,11 +34,11 @@ export default function ScrollDownButton() {
   return (
     <button
       onClick={scrollToBottom}
-      className="hidden md:flex fixed bottom-12 left-1/2 -translate-x-1/2 z-40 items-center justify-center w-14 h-14 rounded-full bg-transparent transition-all duration-300 hover:scale-110"
+      className="flex fixed bottom-12 left-1/2 -translate-x-1/2 z-40 items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-transparent transition-all duration-300 hover:scale-110"
       aria-label="Scroll to bottom"
     >
       <svg
-        className="w-8 h-8 text-white transition-colors"
+        className="w-6 h-6 md:w-8 md:h-8 text-white transition-colors"
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"

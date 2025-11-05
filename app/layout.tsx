@@ -96,7 +96,7 @@ export default function RootLayout({
         <meta name="description" content="Genesis Order 세계관 문서" />
         <meta name="keywords" content="Genesis Order, 창세의 질서, 세계관, TRPG" />
       </head>
-      <body className="font-sans antialiased bg-white text-[#0b0b0b]">
+      <body className="font-sans antialiased bg-white text-[#3d2200]">
         {children}
       </body>
     </html>

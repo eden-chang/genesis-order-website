@@ -11,7 +11,7 @@ export default function AnnouncementsPage() {
 
         <div className="text-center my-12">
           <h1 className="section-title mb-4">Notice</h1>
-          <p className="text-lg md:text-xl text-[rgb(215,145,24)] font-heading">공지사항</p>
+          <p className="text-lg text-[rgb(215,145,24)] font-heading">공지사항</p>
         </div>
 
         {/* Content Warning */}
@@ -30,7 +30,7 @@ export default function AnnouncementsPage() {
               <h2 className="text-base font-bold italic text-[rgb(194,110,0)] mb-4 font-baskervville">
                 Content Warning
               </h2>
-              <div className="space-y-1 text-sm leading-normal text-[rgb(194,110,0)]">
+              <div className="space-y-1 leading-normal text-[rgb(194,110,0)] tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
                 <p>본 커뮤니티는 <strong>부상, 상해, 살해, 사망, 폭력</strong> 등의 요소를 포함하고 있습니다.</p>
                 <p>운영진은 위와 같은 비윤리적 행위를 옹호하지 않으며, 모든 사건과 인물, 배경은 허구입니다.</p>
                 <p>러닝 도중 커뮤니티와 현실이 혼동될 시 운영진에게 알린 후 하차하시기를 권고합니다.</p>
@@ -41,15 +41,16 @@ export default function AnnouncementsPage() {
 
         {/* Schedule */}
         <section className="mb-16">
-          <h2 className="text-xl md:text-2xl font-bold mb-8">
+          <h2 className="text-xl font-bold mb-8">
             <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded">
               <span className="font-baskervville font-bold italic">Schedule</span>
             </span>
           </h2>
+          <div className="h-[20px]"></div>
           <div className="relative py-4">
-            {/* 타임라인 세로선 - 중앙 */}
-            <div className="absolute left-1/2 -top-[35px] -bottom-[35px] w-0.5 opacity-40 -translate-x-1/2" style={{ background: 'linear-gradient(to bottom, white 0%, #e5a918 10%, #e5a918 90%, white 100%)' }}></div>
-            
+            {/* 타임라인 세로선 - 모바일: 왼쪽, 데스크톱: 중앙 */}
+            <div className="absolute left-4 md:left-1/2 -top-[35px] -bottom-[35px] w-0.5 opacity-40 md:-translate-x-1/2" style={{ background: 'linear-gradient(to bottom, white 0%, #e5a918 10%, #e5a918 90%, white 100%)' }}></div>
+
             <div className="space-y-[64px]">
               {[
                 { date: "12/11(목) 00:00", text: "가산점 신청서 접수 시작" },
@@ -62,19 +63,19 @@ export default function AnnouncementsPage() {
                 const isLeft = index % 2 === 0;
                 return (
                   <div key={index} className="relative flex items-center justify-center group">
-                    {/* 타임라인 마커 - 중앙 */}
-                    <div className="absolute left-1/2 flex items-center justify-center w-3 h-3 -translate-x-1/2 pointer-events-none">
+                    {/* 타임라인 마커 - 모바일: 왼쪽, 데스크톱: 중앙 */}
+                    <div className="absolute left-4 md:left-1/2 flex items-center justify-center w-3 h-3 -translate-x-1/2 pointer-events-none">
                       <div className="relative w-3 h-3 rounded-full bg-[#e5a918] border-2 border-white group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)] transition-all duration-200"></div>
                     </div>
-                    
-                    {/* 카드 스타일 컨텐츠 */}
-                    <div className={`absolute bg-transparent border border-transparent rounded-lg transition-all duration-200 w-[200px] ${isLeft ? 'right-1/2 text-right pr-4 pl-4 pt-4 pb-4 mr-[5px]' : 'left-1/2 pl-4 pr-4 pt-4 pb-4 ml-[5px]'}`}>
-                      <div className={`flex items-center gap-3 mb-2 ${isLeft ? 'justify-end' : ''}`}>
+
+                    {/* 카드 스타일 컨텐츠 - 모바일: 오른쪽 고정, 데스크톱: 좌우 교차 */}
+                    <div className={`absolute bg-transparent border border-transparent rounded-lg transition-all duration-200 w-[calc(100%-4rem)] md:w-[200px] left-4 pl-8 pr-4 pt-4 pb-4 ${isLeft ? 'md:right-1/2 md:left-auto md:text-right md:pr-4 md:pl-4 md:mr-[5px]' : 'md:left-1/2 md:pl-4 md:pr-4 md:ml-[5px]'}`}>
+                      <div className={`flex items-center gap-3 mb-2 ${isLeft ? 'md:justify-end' : ''}`}>
                         <div className="font-bold text-[#e5a918] text-xs transition-all duration-200 group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)]">
                           {item.date}
                         </div>
                       </div>
-                      <div className="text-[#0b0b0b] text-sm leading-normal transition-all duration-200 group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)]">
+                      <div className="text-[#3d2200] leading-normal transition-all duration-200 group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)] tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
                         {item.text}
                       </div>
                     </div>
@@ -87,12 +88,12 @@ export default function AnnouncementsPage() {
 
         {/* Notice */}
         <section className="mb-16">
-          <h2 className="text-xl md:text-2xl font-bold mb-6">
+          <h2 className="text-xl font-bold mb-6">
             <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded">
               <span className="font-baskervville font-bold italic">Notice</span>
             </span>
           </h2>
-          <div className="space-y-3 text-[10.5pt] md:text-[11.5pt] text-[#0b0b0b] font-sans">
+          <div className="space-y-3 text-[#3d2200] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
             {[
               <span key="1">본 문서는 자캐 커뮤니티<strong>〈Genesis Order〉</strong>의 공지사항 문서입니다.</span>,
               <span key="2">본 커뮤니티는 <strong>성인 연령가</strong>입니다. <strong>06년생</strong> 이상만 신청서를 제출할 수 있습니다.</span>,
@@ -121,12 +122,12 @@ export default function AnnouncementsPage() {
 
         {/* Rules */}
         <section className="mb-16">
-          <h2 className="text-xl md:text-2xl font-bold mb-6">
+          <h2 className="text-xl font-bold mb-6">
             <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded">
               <span className="font-baskervville font-bold italic">Rules</span>
             </span>
           </h2>
-          <div className="space-y-3 text-[10.5pt] md:text-[11.5pt] text-[#0b0b0b] font-sans">
+          <div className="space-y-3 text-[#3d2200] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
             <div className="flex items-start leading-normal md:leading-relaxed">
               <span className="text-[#e5a918] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ✶

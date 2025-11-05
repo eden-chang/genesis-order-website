@@ -90,7 +90,7 @@ export default function Home() {
         <section className="py-16 md:py-20 px-4 md:px-8 bg-white">
           <div className="max-w-3xl mx-auto text-center">
             <div className="space-y-2 text-[11pt] text-[#0b0b0b] leading-normal" style={{ fontFamily: 'var(--font-nanum-myeongjo)', wordBreak: 'keep-all', letterSpacing: '-0.01em' }}>
-              <p>제정일치 국가 '길리아드'가 되어 세계를 삼킨 미국과 소련을 비롯한 공산주의 진영 간의 냉전이 진행되는 시대</p>
+              <p>제정일치 국가 &apos;길리아드&apos;가 되어 세계를 삼킨 미국과 소련을 비롯한 공산주의 진영 간의 냉전이 진행되는 시대</p>
               <br />
               <p>1965년, 알래스카 지역을 관리하는 어느 영사가 정화 축일을 기념하여 자선 음악회를 개최한다</p>
               <p>이곳에 모여든 이들은 약속의 땅을 비롯한 창세교 신도와 소련 및 공산주의 진영의 인물, 그리고 중립적인 북유럽까지</p>

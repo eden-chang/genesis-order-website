@@ -121,16 +121,15 @@ export default function ConstellationNavigation({ pages }: ConstellationNavigati
     textAnchor: 'start' | 'middle' | 'end';
   } => {
     const pos = calculateTrianglePoints.pagePositions[index];
-    const textOffset = isMobile ? 30 : 40;
-    
+
     // 각 페이지 위치에 따른 텍스트 위치
     const labelPositions = [
-      { offsetX: 0, offsetY: -textOffset, textAnchor: 'middle' as const }, // NOTICE (상단)
-      { offsetX: textOffset, offsetY: 0, textAnchor: 'start' as const }, // SYSTEM (우측)
-      { offsetX: textOffset, offsetY: 0, textAnchor: 'start' as const }, // QNA (우측)
-      { offsetX: 0, offsetY: textOffset, textAnchor: 'middle' as const }, // APPLY (하단)
-      { offsetX: -textOffset, offsetY: 0, textAnchor: 'end' as const }, // CHARACTER (좌측)
-      { offsetX: -textOffset, offsetY: 0, textAnchor: 'end' as const }, // WORLD (좌측)
+      { offsetX: 0, offsetY: -20, textAnchor: 'middle' as const }, // NOTICE (상단)
+      { offsetX: 15, offsetY: 4, textAnchor: 'start' as const }, // SYSTEM (우측)
+      { offsetX: -42, offsetY: 30, textAnchor: 'start' as const }, // QNA (우측)
+      { offsetX: 0, offsetY: 30, textAnchor: 'middle' as const }, // APPLY (하단)
+      { offsetX: 42, offsetY: 30, textAnchor: 'end' as const }, // CHARACTER (좌측)
+      { offsetX: -15, offsetY: 4, textAnchor: 'end' as const }, // WORLD (좌측)
     ];
     
     const position = labelPositions[index];
@@ -151,22 +150,22 @@ export default function ConstellationNavigation({ pages }: ConstellationNavigati
       >
         {/* 바깥 정삼각형 (밑변이 아래) */}
         <path
-          d={`M ${calculateTrianglePoints.outerTriangle[0].x} ${calculateTrianglePoints.outerTriangle[0].y} 
-              L ${calculateTrianglePoints.outerTriangle[1].x} ${calculateTrianglePoints.outerTriangle[1].y} 
+          d={`M ${calculateTrianglePoints.outerTriangle[0].x} ${calculateTrianglePoints.outerTriangle[0].y}
+              L ${calculateTrianglePoints.outerTriangle[1].x} ${calculateTrianglePoints.outerTriangle[1].y}
               L ${calculateTrianglePoints.outerTriangle[2].x} ${calculateTrianglePoints.outerTriangle[2].y} Z`}
           fill="none"
-          stroke="#e5a918"
+          stroke="#2f2c31"
           strokeWidth={isMobile ? 1.5 : 2}
           strokeOpacity="0.3"
         />
 
         {/* 안쪽 뒤집어진 정삼각형 (밑변이 위) */}
         <path
-          d={`M ${calculateTrianglePoints.innerTriangle[0].x} ${calculateTrianglePoints.innerTriangle[0].y} 
-              L ${calculateTrianglePoints.innerTriangle[1].x} ${calculateTrianglePoints.innerTriangle[1].y} 
+          d={`M ${calculateTrianglePoints.innerTriangle[0].x} ${calculateTrianglePoints.innerTriangle[0].y}
+              L ${calculateTrianglePoints.innerTriangle[1].x} ${calculateTrianglePoints.innerTriangle[1].y}
               L ${calculateTrianglePoints.innerTriangle[2].x} ${calculateTrianglePoints.innerTriangle[2].y} Z`}
           fill="none"
-          stroke="#e5a918"
+          stroke="#2f2c31"
           strokeWidth={isMobile ? 1.5 : 2}
           strokeOpacity="0.3"
         />
@@ -196,26 +195,40 @@ export default function ConstellationNavigation({ pages }: ConstellationNavigati
                 cx={pos.x}
                 cy={pos.y}
                 r={isMobile ? 6 : 8}
-                fill="#e5a918"
+                fill="#2f2c31"
                 stroke="white"
                 strokeWidth={isMobile ? 1.5 : 2}
                 className="cursor-pointer transition-all duration-200"
-                style={{ fill: isHovered ? '#f5b743' : '#e5a918' }}
+                style={{ fill: isHovered ? '#FFEF0A' : '#2f2c31' }}
               />
 
               {/* 텍스트 (항상 표시) */}
-              <g pointerEvents="none">
+              <g>
+                {/* 텍스트 클릭 영역 (텍스트보다 살짝 크게) */}
+                <rect
+                  x={labelPos.textAnchor === 'middle' ? labelPos.x - (isMobile ? 30 : 40) :
+                     labelPos.textAnchor === 'start' ? labelPos.x - 5 :
+                     labelPos.x - (isMobile ? 55 : 75)}
+                  y={labelPos.y - (isMobile ? 10 : 12)}
+                  width={isMobile ? 60 : 80}
+                  height={isMobile ? 20 : 24}
+                  fill="transparent"
+                  className="cursor-pointer"
+                  onClick={() => router.push(page.href)}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                />
                 <text
                   x={labelPos.x}
                   y={labelPos.y}
                   textAnchor={labelPos.textAnchor}
                   fontSize={isMobile ? 12 : 14}
-                  fontWeight="bold"
                   fill="#2f2c31"
-                  className="cursor-pointer transition-all duration-200"
-                  style={{ 
-                    fontFamily: 'var(--font-noto-serif-kr)',
-                    fill: isHovered ? '#e5a918' : '#2f2c31'
+                  pointerEvents="none"
+                  className="transition-all duration-200"
+                  style={{
+                    fontFamily: 'var(--font-pretendard-regular)',
+                    fill: isHovered ? '#FFEF0A' : '#2f2c31'
                   }}
                 >
                   {page.title.toUpperCase()}

@@ -58,6 +58,13 @@ const pretendardSemiBold = localFont({
   display: "swap",
 });
 
+// Pretendard Bold (로컬 파일)
+const pretendardBold = localFont({
+  src: "../public/fonts/Pretendard-Bold.ttf",
+  variable: "--font-pretendard-bold",
+  display: "swap",
+});
+
 // 푸터 폰트: Pretendard Regular (로컬 파일)
 const pretendardRegular = localFont({
   src: "../public/fonts/Pretendard-Regular.ttf",
@@ -118,7 +125,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="ko" className={`${notoSansKR.variable} ${notoSerifKR.variable} ${pretendardMedium.variable} ${ebGaramond.variable} ${baskervville.variable} ${proximanovaBlack.variable} ${pretendardSemiBold.variable} ${pretendardRegular.variable} ${pretendardLight.variable}`}>
+    <html lang="ko" className={`${notoSansKR.variable} ${notoSerifKR.variable} ${pretendardMedium.variable} ${ebGaramond.variable} ${baskervville.variable} ${proximanovaBlack.variable} ${pretendardSemiBold.variable} ${pretendardBold.variable} ${pretendardRegular.variable} ${pretendardLight.variable}`}>
       <head>
         <title>Genesis Order - 창세의 질서</title>
         <meta name="description" content="Genesis Order 세계관 문서" />

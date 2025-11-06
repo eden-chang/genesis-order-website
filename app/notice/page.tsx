@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -32,42 +31,41 @@ export default function AnnouncementsPage() {
         </section>
 
         {/* Schedule */}
-        <section className="mb-16">
-          <h2 className="text-xl font-bold mb-8">
-            <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded">
-              <span className="font-baskervville font-bold italic">Schedule</span>
+        <section className="py-12 md:py-16 mb-16">
+          <h2 className="text-xl font-bold mb-8 md:mb-10">
+            <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
+              Schedule
             </span>
           </h2>
-          <div className="h-[20px]"></div>
-          <div className="relative py-4">
+          <div className="relative py-8 md:py-12">
             {/* 타임라인 세로선 - 모바일: 왼쪽, 데스크톱: 중앙 */}
-            <div className="absolute left-4 md:left-1/2 -top-[35px] -bottom-[35px] w-0.5 opacity-40 md:-translate-x-1/2" style={{ background: 'linear-gradient(to bottom, white 0%, #e5a918 10%, #e5a918 90%, white 100%)' }}></div>
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 opacity-40 md:-translate-x-1/2" style={{ background: 'linear-gradient(to bottom, white 0%, #2F2C31 10%, #2F2C31 90%, white 100%)' }}></div>
 
-            <div className="space-y-[64px]">
+            <div className="space-y-[20px]">
               {[
                 { date: "12/11(목) 00:00", text: "가산점 신청서 접수 시작" },
                 { date: "12/13(토) 23:59", text: "가산점 신청서 접수 마감" },
                 { date: "12/14(일) 00:00", text: "일반 신청서 접수 시작" },
                 { date: "12/18(목) 23:59", text: "일반 신청서 접수 마감" },
                 { date: "12/20(토) 22:00", text: "개장 및 인트로" },
-                { date: "01/03(금) 22:00", text: "아웃트로" },
+                { date: "01/03(토) 22:00", text: "아웃트로" },
               ].map((item, index) => {
                 const isLeft = index % 2 === 0;
                 return (
-                  <div key={index} className="relative flex items-center justify-center group">
+                  <div key={index} className="relative min-h-[60px] flex items-center justify-center group">
                     {/* 타임라인 마커 - 모바일: 왼쪽, 데스크톱: 중앙 */}
                     <div className="absolute left-[11px] md:left-1/2 flex items-center justify-center w-3 md:w-3 md:h-3 md:-translate-x-1/2 pointer-events-none">
-                      <div className="relative w-3 h-3 rounded-full bg-[#e5a918] border-2 border-white group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)] transition-all duration-200"></div>
+                      <div className="relative w-3 h-3 rounded-full bg-[#2F2C31] border-2 border-white"></div>
                     </div>
 
                     {/* 카드 스타일 컨텐츠 - 모바일: 오른쪽 고정, 데스크톱: 좌우 교차 */}
                     <div className={`absolute bg-transparent border border-transparent rounded-lg transition-all duration-200 w-[calc(100%-4rem)] md:w-[200px] left-4 pl-8 pr-4 pt-4 pb-4 ${isLeft ? 'md:right-1/2 md:left-auto md:text-right md:pr-4 md:pl-4 md:mr-[5px]' : 'md:left-1/2 md:pl-4 md:pr-4 md:ml-[5px]'}`}>
                       <div className={`flex items-center gap-3 mb-2 ${isLeft ? 'md:justify-end' : ''}`}>
-                        <div className="font-bold text-[#e5a918] text-xs transition-all duration-200 group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)]">
+                        <div className="text-[#2F2C31] text-xs" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                           {item.date}
                         </div>
                       </div>
-                      <div className="text-[#2f2c31] leading-normal transition-all duration-200 group-hover:drop-shadow-[0_0_4px_rgba(229,169,24,0.6)] tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+                      <div className="text-[#2f2c31] leading-normal tracking-[-0.03em] md:tracking-normal" style={{ fontFamily: 'var(--font-noto-serif-kr)', wordBreak: 'keep-all' }}>
                         {item.text}
                       </div>
                     </div>
@@ -81,13 +79,13 @@ export default function AnnouncementsPage() {
         {/* Notice */}
         <section className="mb-16">
           <h2 className="text-xl font-bold mb-6">
-            <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded">
-              <span className="font-baskervville font-bold italic">Notice</span>
+            <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
+              Notice
             </span>
           </h2>
           <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
             {[
-              <span key="1">본 문서는 자캐 커뮤니티<strong>〈Genesis Order〉</strong>의 공지사항 문서입니다.</span>,
+              <span key="1">본 문서는 자캐 커뮤니티 <strong>〈Genesis Order〉</strong>의 공지사항 문서입니다.</span>,
               <span key="2">본 커뮤니티는 <strong>성인 연령가</strong>입니다. <strong>06년생</strong> 이상만 신청서를 제출할 수 있습니다.</span>,
               "방송통신심의위원회 SafeNet 등급 기준 노출 4등급, 성행위 4등급, 폭력 4등급, 언어 4등급의 수위를 따릅니다. 오너 간 합의 하에 이루어지는 모든 행위를 허용합니다.",
               "첫커, 첫 시리커 러닝이 불가합니다.",
@@ -103,7 +101,7 @@ export default function AnnouncementsPage() {
               "운영진은 공지 미숙지로 인해 발생하는 일에 책임을 지지 않습니다.",
             ].map((text, index) => (
               <div key={index} className="flex items-start leading-normal md:leading-relaxed">
-                <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+                <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
                 </span>
                 <span>{text}</span>
@@ -115,32 +113,32 @@ export default function AnnouncementsPage() {
         {/* Rules */}
         <section className="mb-16">
           <h2 className="text-xl font-bold mb-6">
-            <span className="text-[#e5a918] bg-[#fff2cc] px-2 py-1 rounded">
-              <span className="font-baskervville font-bold italic">Rules</span>
+            <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
+              Rules
             </span>
           </h2>
           <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
             <div className="flex items-start leading-normal md:leading-relaxed">
-              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+              <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ⦿
               </span>
               <span>본 커뮤니티는 경고 제도를 사용합니다. 경고 3회 누적 시 제명됩니다.</span>
             </div>
             <div className="flex items-start leading-normal md:leading-relaxed">
-              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+              <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ⦿
               </span>
               <span>제명된 캐릭터는 커뮤니티 내에서 처음부터 존재하지 않았던 인물이 됩니다.</span>
             </div>
             <div className="flex items-start leading-normal md:leading-relaxed">
-              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+              <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ⦿
               </span>
               <span>본 커뮤니티는 시리어스 커뮤니티이나, 어느 정도의 개그 멘트를 허용합니다. 다만 스토리 진행 시에는 개그 분위기가 형성되지 않도록 주의 부탁드립니다.</span>
             </div>
 
             <div className="flex items-start leading-normal md:leading-relaxed">
-              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+              <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ⦿
               </span>
               <span>경고 사항은 다음과 같습니다.</span>
@@ -155,14 +153,14 @@ export default function AnnouncementsPage() {
                 "운영진의 판단하에 경고가 필요한 사항",
               ].map((text, index) => (
                 <div key={index} className="flex items-start">
-                  <span className="text-[#e5a918] mr-3 flex-shrink-0">✕</span>
+                  <span className="text-[#2F2C31] mr-3 flex-shrink-0">✕</span>
                   <span>{text}</span>
                 </div>
               ))}
             </div>
 
             <div className="flex items-start leading-normal md:leading-relaxed mt-6">
-              <span className="text-[#594c65] mr-3 flex-shrink-0 font-semibold" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+              <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ⦿
               </span>
               <span>제명 사항은 다음과 같습니다.</span>
@@ -180,7 +178,7 @@ export default function AnnouncementsPage() {
                 "운영진의 판단하에 제명이 필요한 사항",
               ].map((text, index) => (
                 <div key={index} className="flex items-start">
-                  <span className="text-[#e5a918] mr-3 flex-shrink-0">✕</span>
+                  <span className="text-[#2F2C31] mr-3 flex-shrink-0">✕</span>
                   <span>{text}</span>
                 </div>
               ))}

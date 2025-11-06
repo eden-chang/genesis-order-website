@@ -8,6 +8,7 @@ import Script from "next/script";
 import { AudioProvider } from "@/context/AudioContext";
 import BGMController from "@/components/ui/BGMController";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // 기본 폰트: Noto Sans KR
 const notoSansKR = Noto_Sans_KR({
@@ -197,6 +198,7 @@ export default function RootLayout({
           <BGMController />
         </AudioProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

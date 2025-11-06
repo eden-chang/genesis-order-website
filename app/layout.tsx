@@ -83,6 +83,29 @@ const pretendardLight = localFont({
   display: "swap",
 });
 
+// KoPub World 돋움 폰트 (로컬 파일)
+const kopubWorldDotum = localFont({
+  src: [
+    {
+      path: "../public/fonts/kopubworld-dotum-regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/kopubworld-dotum-medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/kopubworld-dotum-bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-kopubworld-dotum",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -129,7 +152,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="ko" className={`${notoSansKR.variable} ${notoSerifKR.variable} ${pretendardMedium.variable} ${ebGaramond.variable} ${baskervville.variable} ${proximanovaBlack.variable} ${pretendardSemiBold.variable} ${pretendardBold.variable} ${pretendardRegular.variable} ${pretendardLight.variable}`}>
+    <html lang="ko" className={`${notoSansKR.variable} ${notoSerifKR.variable} ${pretendardMedium.variable} ${ebGaramond.variable} ${baskervville.variable} ${proximanovaBlack.variable} ${pretendardSemiBold.variable} ${pretendardBold.variable} ${pretendardRegular.variable} ${pretendardLight.variable} ${kopubWorldDotum.variable}`}>
       <head>
         <title>Genesis Order</title>
         <meta name="description" content="Return to the Origin" />

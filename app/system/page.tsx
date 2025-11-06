@@ -82,7 +82,7 @@ export default function SystemPage() {
               </span>
             </h2>
             <div className="space-y-3 text-[#2f2c31] font-sans leading-normal md:leading-relaxed tracking-[-0.03em] md:tracking-normal">
-              <p>본 커뮤니티는 '에덴의 만찬'을 주최한 영사, <strong>빅터 K. 할덴 소유의 대저택</strong>을 배경으로 합니다. 이 대저택은 눈이 쌓인 알래스카 산지 한복판에 위치하여 축일 기간에는 마을로 이동할 수 없습니다.</p>
+              <p>본 커뮤니티는 &apos;에덴의 만찬&apos;을 주최한 영사, <strong>빅터 K. 할덴 소유의 대저택</strong>을 배경으로 합니다. 이 대저택은 눈이 쌓인 알래스카 산지 한복판에 위치하여 축일 기간에는 마을로 이동할 수 없습니다.</p>
               <p>모든 캐릭터는 10일간 진행되는 연회를 즐기기 위해, 혹은 그밖의 여러 이유로 만찬에 참석했습니다.</p>
               <p>그러나 모두가 잠든 어느 날 새벽, <strong>살인 사건</strong>이 발생합니다. 이들은 고립된 커다란 저택에서 무사히 탈출하기 위해 사건을 조사하고 전말을 파헤칩니다. 동시에, 돌아오는 의심을 피하기 위해 노력하게 됩니다.</p>
             </div>

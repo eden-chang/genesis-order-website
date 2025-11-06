@@ -130,7 +130,7 @@ export default function RootLayout({
     <html lang="ko" className={`${notoSansKR.variable} ${notoSerifKR.variable} ${pretendardMedium.variable} ${ebGaramond.variable} ${baskervville.variable} ${proximanovaBlack.variable} ${pretendardSemiBold.variable} ${pretendardBold.variable} ${pretendardRegular.variable} ${pretendardLight.variable}`}>
       <head>
         <title>Genesis Order</title>
-        <meta name="description" content="Genesis Order 세계관 문서" />
+        <meta name="description" content="Return to the Origin" />
         <meta name="keywords" content="Genesis Order, 창세의 질서, 세계관, TRPG" />
 
         {/* Favicon */}
@@ -139,13 +139,13 @@ export default function RootLayout({
         {/* Open Graph / Social Media */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Genesis Order" />
-        <meta property="og:description" content="Genesis Order 세계관 문서" />
+        <meta property="og:description" content="Return to the Origin" />
         <meta property="og:image" content="/images/thumbnail.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Genesis Order" />
-        <meta name="twitter:description" content="Genesis Order 세계관 문서" />
+        <meta name="twitter:description" content="Return to the Origin" />
         <meta name="twitter:image" content="/images/thumbnail.png" />
       </head>
       <body className="font-sans antialiased text-[#2f2c31]">

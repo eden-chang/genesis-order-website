@@ -6,6 +6,7 @@ import "./globals.css";
 import { useEffect } from "react";
 import { AudioProvider } from "@/context/AudioContext";
 import BGMController from "@/components/ui/BGMController";
+import { Analytics } from "@vercel/analytics/next";
 
 // 기본 폰트: Noto Sans KR
 const notoSansKR = Noto_Sans_KR({
@@ -153,6 +154,7 @@ export default function RootLayout({
           {children}
           <BGMController />
         </AudioProvider>
+        <Analytics />
       </body>
     </html>
   );

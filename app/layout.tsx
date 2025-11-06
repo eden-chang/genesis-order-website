@@ -4,6 +4,7 @@ import { Noto_Sans_KR, Noto_Serif_KR, EB_Garamond, Baskervville } from "next/fon
 import localFont from "next/font/local";
 import "./globals.css";
 import { useEffect } from "react";
+import Script from "next/script";
 import { AudioProvider } from "@/context/AudioContext";
 import BGMController from "@/components/ui/BGMController";
 import { Analytics } from "@vercel/analytics/next";
@@ -150,6 +151,24 @@ export default function RootLayout({
         <meta name="twitter:image" content="/images/thumbnail.png" />
       </head>
       <body className="font-sans antialiased text-[#2f2c31]">
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-V774Q1YZBH"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-V774Q1YZBH');
+            `,
+          }}
+        />
+
         <AudioProvider>
           {children}
           <BGMController />

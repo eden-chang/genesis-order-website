@@ -59,7 +59,7 @@ export default function SystemPage() {
                 NOTICE
               </span>
             </h2>
-            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
               {[
                 <span key="1">본 커뮤니티는 <strong>성인가 수위 프리 커뮤니티</strong>로, <strong>폭력, 상해, 살해</strong>와 관련된 내용을 다룹니다. 운영진은 이와 같은 비윤리적 행위를 옹호하지 않습니다.</span>,
                 "모든 스토리 진행은 오후 10시에 시작합니다.",
@@ -81,7 +81,7 @@ export default function SystemPage() {
                 SETTING
               </span>
             </h2>
-            <div className="space-y-3 text-[#2f2c31] font-sans leading-normal md:leading-relaxed tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+            <div className="space-y-3 text-[#2f2c31] font-sans leading-normal md:leading-relaxed tracking-[-0.03em] md:tracking-normal">
               <p>본 커뮤니티는 '에덴의 만찬'을 주최한 영사, <strong>빅터 K. 할덴 소유의 대저택</strong>을 배경으로 합니다. 이 대저택은 눈이 쌓인 알래스카 산지 한복판에 위치하여 축일 기간에는 마을로 이동할 수 없습니다.</p>
               <p>모든 캐릭터는 10일간 진행되는 연회를 즐기기 위해, 혹은 그밖의 여러 이유로 만찬에 참석했습니다.</p>
               <p>그러나 모두가 잠든 어느 날 새벽, <strong>살인 사건</strong>이 발생합니다. 이들은 고립된 커다란 저택에서 무사히 탈출하기 위해 사건을 조사하고 전말을 파헤칩니다. 동시에, 돌아오는 의심을 피하기 위해 노력하게 됩니다.</p>
@@ -95,7 +95,7 @@ export default function SystemPage() {
                 SUSPECT
               </span>
             </h2>
-            <div className="space-y-3 text-[#2f2c31] font-sans leading-normal md:leading-relaxed tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+            <div className="space-y-3 text-[#2f2c31] font-sans leading-normal md:leading-relaxed tracking-[-0.03em] md:tracking-normal">
               <p>공개된 NMPC 2인 외에도 <strong>비공개 NMPC</strong>가 러너 캐릭터 사이에 숨어 있습니다. 이들은 살인 사건의 잠재적 <strong>피해자이자 용의자</strong>입니다. 여러분은 조사를 통해 용의자를 식별하고 <strong>범인</strong>을 찾아내야 합니다.</p>
               <p>세계관 외적 요소를 이유로 누가 NMPC인지 캐릭터의 입을 빌려 발설하는 행위는 메타 발언으로 간주, 불허합니다. 조사 내용을 근거로 용의자를 특정하는 건 가능합니다.</p>
               <p>캐릭터 간의 대립은 원활한 롤플레잉과 몰입을 위한 요소로, 커뮤니티 내에서 발생하는 모든 사건은 허구입니다. 허구의 사건이 오너 간의 갈등으로 번지지 않도록 주의 바랍니다. 러닝 도중 커뮤니티와 현실이 혼동될 시 운영진에게 알린 후 하차하시기를 권고합니다.</p>
@@ -109,7 +109,7 @@ export default function SystemPage() {
                 CONDITION
               </span>
             </h2>
-            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
               <p className="leading-normal md:leading-relaxed">모든 캐릭터는 <strong>[상태]</strong>를 지닙니다. 상태는 일종의 자원으로, 캐릭터의 행동에 영향을 미칩니다.</p>
               <p className="leading-normal md:leading-relaxed">상태는 조사, 스토리 진행, 아이템 사용을 통해 바꿀 수 있습니다.</p>
 
@@ -163,7 +163,7 @@ export default function SystemPage() {
                 ABILITY
               </span>
             </h2>
-            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
               <p className="leading-normal md:leading-relaxed">캐릭터는 네 가지 <strong>[능력]</strong>을 가집니다. 신청서 작성 시 총 6점을 자유롭게 배분할 수 있습니다. (각 능력치마다 최소 0점, 최대 5점)</p>
               <p className="leading-normal md:leading-relaxed">배분한 능력치는 조사 시 주사위 보정치로 작용합니다.</p>
 
@@ -225,7 +225,7 @@ export default function SystemPage() {
                 INVESTIGATION
               </span>
             </h2>
-            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
               <p className="leading-normal md:leading-relaxed"><strong>[조사]</strong>는 마스토돈 자동봇을 사용해 정해진 시간 없이 진행합니다.</p>
               <p className="leading-normal md:leading-relaxed">정해진 일차의 0시에 <strong>[단서 목록]</strong>이 공개됩니다. <strong>[단서]</strong>를 조사하여 살인 사건 및 커뮤니티의 진상과 관련된 정보를 얻을 수 있습니다.</p>
               <p className="leading-normal md:leading-relaxed"><strong>[조사]</strong>를 시도하면 <strong>10면체 주사위</strong>를 굴립니다. 주사위 굴림값과 요구 능력치 1점당 +1을 합산하여 주사위 결과를 계산합니다.</p>
@@ -355,7 +355,7 @@ export default function SystemPage() {
                 TRAILING
               </span>
             </h2>
-            <div className="space-y-3 text-[#2f2c31] font-sans leading-normal md:leading-relaxed tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+            <div className="space-y-3 text-[#2f2c31] font-sans leading-normal md:leading-relaxed tracking-[-0.03em] md:tracking-normal">
               <p>범인을 찾아내기 위해서는 용의자를 면밀히 관찰해야 합니다.</p>
               <p>모든 캐릭터는 하루 1회, 범인이라고 의심하는 한 명의 캐릭터를 <strong>[추적]</strong>할 수 있습니다. 추적은 기운을 소모하지 않습니다.</p>
               <p>추적한 캐릭터가 용의자일 경우 스토리와 관련된 정보를, 용의자가 아닐 경우 비밀 설정과 관련된 정보를 얻게 됩니다.</p>
@@ -369,7 +369,7 @@ export default function SystemPage() {
                 EKLE
               </span>
             </h2>
-            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
               <p className="leading-normal md:leading-relaxed">길리아드는 <strong>에클(Ekle)</strong>을 화폐로 사용합니다. 모든 캐릭터는 1에클을 보유한 채 시작합니다.</p>
 
               <div>

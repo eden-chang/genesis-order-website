@@ -78,7 +78,7 @@ export default function AnnouncementsPage() {
               NOTICE
             </span>
           </h2>
-          <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+          <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
             {[
               <span key="1">본 문서는 자캐 커뮤니티 <strong>〈Genesis Order〉</strong>의 공지사항 문서입니다.</span>,
               <span key="2">본 커뮤니티는 <strong>성인 연령가</strong>입니다. <strong>06년생</strong> 이상만 신청서를 제출할 수 있습니다.</span>,
@@ -112,7 +112,7 @@ export default function AnnouncementsPage() {
               RULES
             </span>
           </h2>
-          <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+          <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
             <div className="flex items-start leading-normal md:leading-relaxed">
               <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                 ⦿

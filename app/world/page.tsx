@@ -32,9 +32,9 @@ export default function WorldviewPage() {
 
         {/* Notice */}
         <section className="mb-16">
-          <div className="relative overflow-hidden p-6 rounded-lg border-2 border-[#e4a408] bg-transparent">
+          <div className="relative overflow-hidden p-6 rounded-lg border-2 border-[#2f2c31] bg-transparent">
             {/* Content */}
-            <div className="relative z-10 space-y-1 text-[rgb(194,110,0)] leading-normal text-center tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+            <div className="relative z-10 space-y-1 text-[#2f2c31] leading-normal text-center tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
               <p>본 커뮤니티는 현실의 종교적 요소에서 일부 모티브를 얻은 <strong>창작물</strong>입니다.</p>
               <p>운영진은 실존하는 어떠한 종교, 교단, 신앙 체계도 옹호하거나 비난하지 않습니다.</p>
               <p>모든 설정은 <strong>가상의 세계관 내 서사적 장치</strong>로만 사용됩니다.</p>
@@ -47,15 +47,21 @@ export default function WorldviewPage() {
         {/* 권력 구조 피라미드 */}
         <section className="mb-16">
           {/* 안내 문구 */}
-          <div className="text-center mb-6">
-            <p className="text-sm text-[#844a00] tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+          <div className="text-center mb-16">
+            <p className="text-sm text-[#2f2c31] bg-[#fff136] px-4 py-2 rounded-full inline-block tracking-[-0.03em] md:tracking-normal" style={{ fontFamily: 'var(--font-pretendard-bold)', wordBreak: 'keep-all' }}>
               {isTouchDevice ? (
-                <>밑줄 친 단어를 터치하면 설명이 나타납니다.</>
+                <>강조된 단어를 터치하면 설명이 나타납니다.</>
               ) : (
-                <>밑줄 친 단어에 커서를 가져가면 설명이 나타납니다.</>
+                <>강조된 단어에 커서를 가져가면 설명이 나타납니다.</>
               )}
             </p>
           </div>
+          {/* 헤더 */}
+          <h2 className="semi-header mb-1 text-center">
+            <span className="text-[#2f2c31]" style={{ fontFamily: 'var(--font-pretendard-black)' }}>
+              창세교의 권력 구조
+            </span>
+          </h2>
           <PowerPyramid />
         </section>
 
@@ -69,7 +75,7 @@ export default function WorldviewPage() {
           <div className="space-y-4 text-[#2f2c31] font-sans leading-normal md:leading-relaxed [&>p]:indent-[1em] tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
             <p>1929년 일어난 대공황은 미국 사회를 나락으로 밀어 넣었다. 치솟는 실업률과 끝없는 불황 속에서 사람들은 자본주의의 실패를 처절하게 맛보았다. 물질적 풍요를 주창하던 기존의 질서는 신뢰를 잃었으며, 대중의 마음속에는 깊은 불안이 자리 잡았다. 바로 이 시기, 미 동부에서 <Footnote term="창세교(Genesis Order)" definition="대공황을 기점으로 미 동부에서 부흥한 신흥 종교. “신의 뜻은 곧 원점으로의 회귀”라는 교리를 설파한다. 광란의 20년대를 인류의 타락으로 규정하며 몸집을 불렸으며, 이는 미국 동서 전쟁(정화전淨化戰)의 계기가 되었다." id="----genesis-order-" />라는 새로운 불길이 피어올랐다.</p>
             <p>창세교는 1920년경 발원하여 대공황을 기점으로 세력을 불렸다. 이들은 구약과 신약을 재해석해 “신의 뜻은 곧 원점으로의 회귀”라는 교리를 설파했다. 부흥을 맛보았던 광란의 20년대는 곧 인류의 타락이요, 현재의 불황은 신의 뜻을 헤아리지 못한 이기심의 말로라고 일컬었다.</p>
-            <p className="font-heading italic font-bold text-[rgb(197,142,5)]">신께서는 태초부터 타인을 짓밟거나 부를 탐하지 말라 가르치셨다. 그러나, 자본주의를 지탱하는 정치인, 기업가는 연이은 부흥과 공황 속에서도 대중의 고혈을 빨아 제 배를 불리는 데 급급했다. 이는 여호와를 모독한 바리사이나 세리와 다를 바 없다.</p>
+            <p className="font-heading italic font-sans text-[#666015]">신께서는 태초부터 타인을 짓밟거나 부를 탐하지 말라 가르치셨다. 그러나, 자본주의를 지탱하는 정치인, 기업가는 연이은 부흥과 공황 속에서도 대중의 고혈을 빨아 제 배를 불리는 데 급급했다. 이는 여호와를 모독한 바리사이나 세리와 다를 바 없다.</p>
             <p>이처럼 파격적인 주장을 중심으로, 창세교는 신의 섭리를 따르는 자들만이 진정한 행복과 구원을 얻을 수 있다고 역설했다. 자본주의에 의해 착취당하던 서민층은 끝없는 가난이 곧 신의 뜻을 배반한 사회 때문이었다는 주장에 호응했다. 결국 창세교는 대공황의 절망을 비옥한 토양 삼아 폭발적으로 부흥했다.</p>
           </div>
         </section>

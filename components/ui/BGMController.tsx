@@ -30,7 +30,7 @@ export default function BGMController() {
   return (
     <button
       onClick={togglePlay}
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#e4a408] hover:bg-[#c28e00] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center group"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#2f2c31] hover:bg-[#423e43] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center group"
       aria-label={isPlaying ? 'BGM 정지' : 'BGM 재생'}
     >
       {isPlaying ? (
@@ -49,7 +49,7 @@ export default function BGMController() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="white"
-          className="w-6 h-6 ml-1"
+          className="w-7 h-7 -ml-[1px]"
         >
           <path d="M8 5v14l11-7z" />
         </svg>

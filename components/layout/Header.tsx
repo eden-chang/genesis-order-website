@@ -8,13 +8,27 @@ import MobileMenu from "./MobileMenu";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+
+  // 모바일 감지
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsScrolled(true);
+        setIsNavbarVisible(true); // 스크롤 시 navbar 표시
       } else {
         setIsScrolled(false);
+        setIsNavbarVisible(false); // 맨 위에서 navbar 숨김
       }
     };
 
@@ -27,10 +41,11 @@ export default function Header() {
       <header
         className="fixed top-0 left-0 w-full h-[56px] z-50 transition-all duration-300"
         style={{
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.7)' : 'rgba(255, 255, 255, 1)',
-          backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-          WebkitBackdropFilter: isScrolled ? 'blur(10px)' : 'none',
-          boxShadow: isScrolled ? '0 2px 8px rgba(228, 164, 8, 0.08)' : 'none'
+          backgroundColor: isMobile ? 'rgba(255, 255, 255, 1)' : (isScrolled ? 'rgba(255, 255, 255, 0.7)' : 'rgba(255, 255, 255, 1)'),
+          backdropFilter: isMobile ? 'none' : (isScrolled ? 'blur(10px)' : 'none'),
+          WebkitBackdropFilter: isMobile ? 'none' : (isScrolled ? 'blur(10px)' : 'none'),
+          boxShadow: isMobile ? '0 2px 8px rgba(0, 0, 0, 0.08)' : (isScrolled ? '0 2px 8px rgba(0, 0, 0, 0.08)' : 'none'),
+          transform: isMobile && !isNavbarVisible ? 'translateY(-100%)' : 'translateY(0)'
         }}
       >
         <nav className="max-w-3xl mx-auto px-4 md:px-8 h-full flex items-center justify-between">

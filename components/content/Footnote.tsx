@@ -10,7 +10,8 @@ interface FootnoteProps {
 
 export default function Footnote({ term, definition, id }: FootnoteProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [popoverPosition, setPopoverPosition] = useState<'left' | 'right' | 'center'>('left');
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
+  const [popoverPosition, setPopoverPosition] = useState({ top: 0, left: 0 });
   const footnoteRef = useRef<HTMLSpanElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -57,37 +58,51 @@ export default function Footnote({ term, definition, id }: FootnoteProps) {
     return () => window.removeEventListener('resize', checkDevice);
   }, []);
 
-  // 팝오버 위치 계산
-  const calculatePopoverPosition = () => {
-    if (!footnoteRef.current) return;
-
-    const rect = footnoteRef.current.getBoundingClientRect();
+  // 마우스 위치 기반 팝오버 위치 계산
+  const calculatePopoverPosition = (mouseX: number, mouseY: number) => {
     const popoverWidth = 384; // max-w-96 = 24rem = 384px
-    const margin = 20;
+    const popoverHeight = 200; // 대략적인 팝오버 높이 (실제로는 내용에 따라 다름)
+    const offset = 10; // 커서로부터의 거리
+    const margin = 20; // 화면 가장자리 마진
 
-    const spaceOnRight = window.innerWidth - rect.right;
-    const spaceOnLeft = rect.left;
+    let left = mouseX + offset;
+    let top = mouseY + offset;
 
-    // 오른쪽 공간이 충분한 경우
-    if (spaceOnRight >= popoverWidth + margin) {
-      setPopoverPosition('left');
+    // 오른쪽 경계 체크
+    if (left + popoverWidth + margin > window.innerWidth) {
+      left = mouseX - popoverWidth - offset; // 왼쪽에 표시
     }
-    // 왼쪽 공간이 충분한 경우
-    else if (spaceOnLeft >= popoverWidth + margin) {
-      setPopoverPosition('right');
+
+    // 왼쪽 경계 체크
+    if (left < margin) {
+      left = margin;
     }
-    // 양쪽 다 부족한 경우 중앙 정렬
-    else {
-      setPopoverPosition('center');
+
+    // 하단 경계 체크
+    if (top + popoverHeight + margin > window.innerHeight) {
+      top = mouseY - popoverHeight - offset; // 위쪽에 표시
+    }
+
+    // 상단 경계 체크
+    if (top < margin) {
+      top = margin;
+    }
+
+    setPopoverPosition({ top, left });
+  };
+
+  // 마우스 진입 시 위치 저장 (한 번만)
+  const handleMouseEnter = (e: React.MouseEvent) => {
+    if (!mousePosition) {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      calculatePopoverPosition(e.clientX, e.clientY);
     }
   };
 
-  // 리사이즈 시 위치 재계산
-  useEffect(() => {
-    calculatePopoverPosition();
-    window.addEventListener('resize', calculatePopoverPosition);
-    return () => window.removeEventListener('resize', calculatePopoverPosition);
-  }, []);
+  // 마우스 이탈 시 위치 리셋
+  const handleMouseLeave = () => {
+    setMousePosition(null);
+  };
 
   // 모달을 사용할지 팝오버를 사용할지 결정
   const shouldUseModal = isMobile || isTouchDevice;
@@ -96,7 +111,7 @@ export default function Footnote({ term, definition, id }: FootnoteProps) {
     <>
       <span
         ref={footnoteRef}
-        className="relative group cursor-help border-b border-dotted border-[#d4990a] text-[#d4990a] font-bold"
+        className="relative group cursor-help bg-[#fff89f] text-[#000000] font-bold"
         onClick={(e) => {
           e.stopPropagation();
           // 터치 기기이거나 작은 화면에서만 클릭 이벤트 처리
@@ -104,23 +119,19 @@ export default function Footnote({ term, definition, id }: FootnoteProps) {
             setIsMobileOpen(true);
           }
         }}
-        onMouseEnter={calculatePopoverPosition}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         {term}
         {/* 데스크톱 hover 팝오버 - 터치 기기가 아닌 경우에만 표시 */}
-        {!shouldUseModal && (
+        {!shouldUseModal && mousePosition && (
           <span
-            className={`
-              invisible group-hover:visible absolute top-full mt-2
-              w-[calc(100vw-40px)] max-w-96 p-4
-              bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg
-              text-xs md:text-sm text-[#2f2c31] font-normal z-10 indent-0
-              tracking-[-0.03em] md:tracking-normal
-              ${popoverPosition === 'left' ? 'left-0' : ''}
-              ${popoverPosition === 'right' ? 'right-0' : ''}
-              ${popoverPosition === 'center' ? 'left-1/2 -translate-x-1/2' : ''}
-            `}
-            style={{ wordBreak: 'keep-all' }}
+            className="fixed w-[calc(100vw-40px)] max-w-96 p-4 bg-[#ffffff] border-2 border-[#2f2c31] rounded-lg shadow-lg text-xs md:text-sm text-[#232224] font-normal z-50 indent-0 tracking-[-0.03em] md:tracking-normal"
+            style={{
+              wordBreak: 'keep-all',
+              top: `${popoverPosition.top}px`,
+              left: `${popoverPosition.left}px`,
+            }}
           >
             {definition}
           </span>
@@ -138,11 +149,11 @@ export default function Footnote({ term, definition, id }: FootnoteProps) {
           {/* 각주 박스 */}
           <div
             ref={modalRef}
-            className="relative w-[calc(100vw-40px)] max-w-sm mx-auto p-4 bg-[#fffdf6] border-2 border-[#e4a408] rounded-lg shadow-lg text-[10.5pt] text-[#2f2c31] font-normal z-10 indent-0"
+            className="relative w-[calc(100vw-40px)] max-w-sm mx-auto p-4 bg-[#ffffff] border-2 border-[#2f2c31] rounded-lg shadow-lg text-[10.5pt] text-[#232224] font-normal z-10 indent-0"
             onClick={(e) => e.stopPropagation()}
             style={{ wordBreak: 'keep-all' }}
           >
-            <div className="font-bold text-[rgb(212,153,10)] mb-2 tracking-[-0.03em]">{term}</div>
+            <div className="font-bold text-[#232224] mb-2 tracking-[-0.03em]">{term}</div>
             <div className="tracking-[-0.03em]">{definition}</div>
           </div>
         </div>

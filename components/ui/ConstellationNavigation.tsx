@@ -199,19 +199,19 @@ export default function ConstellationNavigation({ pages }: ConstellationNavigati
                 stroke="white"
                 strokeWidth={isMobile ? 1.5 : 2}
                 className="cursor-pointer transition-all duration-200"
-                style={{ fill: isHovered ? '#FFEF0A' : '#2f2c31' }}
+                style={{ fill: isHovered ? '#a496ad' : '#2f2c31' }}
               />
 
               {/* 텍스트 (항상 표시) */}
               <g>
                 {/* 텍스트 클릭 영역 (텍스트보다 살짝 크게) */}
                 <rect
-                  x={labelPos.textAnchor === 'middle' ? labelPos.x - (isMobile ? 30 : 40) :
+                  x={labelPos.textAnchor === 'middle' ? labelPos.x - (isMobile ? 39 : 52) :
                      labelPos.textAnchor === 'start' ? labelPos.x - 5 :
-                     labelPos.x - (isMobile ? 55 : 75)}
-                  y={labelPos.y - (isMobile ? 10 : 12)}
-                  width={isMobile ? 60 : 80}
-                  height={isMobile ? 20 : 24}
+                     labelPos.x - (isMobile ? 73 : 99)}
+                  y={labelPos.y - (isMobile ? 16 : 19)}
+                  width={isMobile ? 78 : 104}
+                  height={isMobile ? 26 : 31}
                   fill="transparent"
                   className="cursor-pointer"
                   onClick={() => router.push(page.href)}
@@ -227,8 +227,8 @@ export default function ConstellationNavigation({ pages }: ConstellationNavigati
                   pointerEvents="none"
                   className="transition-all duration-200"
                   style={{
-                    fontFamily: 'var(--font-pretendard-regular)',
-                    fill: isHovered ? '#FFEF0A' : '#2f2c31'
+                    fontFamily: 'var(--font-pretendard-medium)',
+                    fill: isHovered ? '#a496ad' : '#2f2c31'
                   }}
                 >
                   {page.title.toUpperCase()}

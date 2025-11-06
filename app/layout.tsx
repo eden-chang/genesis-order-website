@@ -129,9 +129,24 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${notoSansKR.variable} ${notoSerifKR.variable} ${pretendardMedium.variable} ${ebGaramond.variable} ${baskervville.variable} ${proximanovaBlack.variable} ${pretendardSemiBold.variable} ${pretendardBold.variable} ${pretendardRegular.variable} ${pretendardLight.variable}`}>
       <head>
-        <title>Genesis Order - 창세의 질서</title>
+        <title>Genesis Order</title>
         <meta name="description" content="Genesis Order 세계관 문서" />
         <meta name="keywords" content="Genesis Order, 창세의 질서, 세계관, TRPG" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/images/favicon.ico" />
+
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Genesis Order" />
+        <meta property="og:description" content="Genesis Order 세계관 문서" />
+        <meta property="og:image" content="/images/thumbnail.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Genesis Order" />
+        <meta name="twitter:description" content="Genesis Order 세계관 문서" />
+        <meta name="twitter:image" content="/images/thumbnail.png" />
       </head>
       <body className="font-sans antialiased text-[#2f2c31]">
         <AudioProvider>

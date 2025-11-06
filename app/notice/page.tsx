@@ -15,13 +15,13 @@ export default function AnnouncementsPage() {
 
         {/* Content Warning */}
         <section className="mb-16">
-          <div className="relative border-2 border-[#e5a918] overflow-hidden p-6 text-center rounded-lg bg-transparent">
+          <div className="relative border-2 border-[#2f2c31] overflow-hidden p-6 text-center rounded-lg bg-transparent">
             {/* Content */}
             <div className="relative z-10">
-              <h2 className="text-base font-bold italic text-[rgb(194,110,0)] mb-4 font-baskervville">
-                Content Warning
+              <h2 className="text-base text-[#2f2c31] mb-4" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                CONTENT WARNING
               </h2>
-              <div className="space-y-1 leading-normal text-[rgb(194,110,0)] tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
+              <div className="space-y-1 leading-normal text-[#2f2c31] tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
                 <p>본 커뮤니티는 <strong>부상, 상해, 살해, 사망, 폭력</strong> 등의 요소를 포함하고 있습니다.</p>
                 <p>운영진은 위와 같은 비윤리적 행위를 옹호하지 않으며, 모든 사건과 인물, 배경은 허구입니다.</p>
                 <p>러닝 도중 커뮤니티와 현실이 혼동될 시 운영진에게 알린 후 하차하시기를 권고합니다.</p>
@@ -31,12 +31,7 @@ export default function AnnouncementsPage() {
         </section>
 
         {/* Schedule */}
-        <section className="py-12 md:py-16 mb-16">
-          <h2 className="text-xl font-bold mb-8 md:mb-10">
-            <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
-              Schedule
-            </span>
-          </h2>
+        <section className="py-12 md:py-8 mb-16">
           <div className="relative py-8 md:py-12">
             {/* 타임라인 세로선 - 모바일: 왼쪽, 데스크톱: 중앙 */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 opacity-40 md:-translate-x-1/2" style={{ background: 'linear-gradient(to bottom, white 0%, #2F2C31 10%, #2F2C31 90%, white 100%)' }}></div>
@@ -61,11 +56,11 @@ export default function AnnouncementsPage() {
                     {/* 카드 스타일 컨텐츠 - 모바일: 오른쪽 고정, 데스크톱: 좌우 교차 */}
                     <div className={`absolute bg-transparent border border-transparent rounded-lg transition-all duration-200 w-[calc(100%-4rem)] md:w-[200px] left-4 pl-8 pr-4 pt-4 pb-4 ${isLeft ? 'md:right-1/2 md:left-auto md:text-right md:pr-4 md:pl-4 md:mr-[5px]' : 'md:left-1/2 md:pl-4 md:pr-4 md:ml-[5px]'}`}>
                       <div className={`flex items-center gap-3 mb-2 ${isLeft ? 'md:justify-end' : ''}`}>
-                        <div className="text-[#2F2C31] text-xs" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                        <div className="text-[#2F2C31] text-xs bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                           {item.date}
                         </div>
                       </div>
-                      <div className="text-[#2f2c31] leading-normal tracking-[-0.03em] md:tracking-normal" style={{ fontFamily: 'var(--font-noto-serif-kr)', wordBreak: 'keep-all' }}>
+                      <div className="text-[#2f2c31] font-sans leading-normal tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
                         {item.text}
                       </div>
                     </div>
@@ -78,9 +73,9 @@ export default function AnnouncementsPage() {
 
         {/* Notice */}
         <section className="mb-16">
-          <h2 className="text-xl font-bold mb-6">
+          <h2 className="semi-header mb-6">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
-              Notice
+              NOTICE
             </span>
           </h2>
           <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
@@ -112,9 +107,9 @@ export default function AnnouncementsPage() {
 
         {/* Rules */}
         <section className="mb-16">
-          <h2 className="text-xl font-bold mb-6">
+          <h2 className="semi-header mb-6">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
-              Rules
+              RULES
             </span>
           </h2>
           <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>

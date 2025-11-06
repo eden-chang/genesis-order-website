@@ -64,21 +64,21 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="mt-[56px]">
+      <main>
         {/* Hero Section */}
-        <section 
-          className="relative h-[calc(100vh-56px)] min-h-[600px] w-full overflow-hidden" 
+        <section
+          className="relative h-screen min-h-[600px] w-full overflow-hidden"
           style={{ backgroundColor: '#fff136' }}
         >
           {/* PC Layer - hero_beta_circle (중앙 배치, 자동 회전) */}
-          <div 
+          <div
             className="absolute left-1/2 hidden md:block"
             style={{
               transform: 'translateX(-50%) translateY(-40px) scale(0.4)',
               transformOrigin: 'center center',
               top: '70px',
               width: '100%',
-              height: 'calc(100vh - 56px - 70px)',
+              height: 'calc(100vh - 70px)',
               maxWidth: '100vw',
             }}
           >
@@ -103,13 +103,13 @@ export default function Home() {
           </div>
 
           {/* Mobile Layer - hero_beta_circle (폭 맞춤, 자동 회전) */}
-          <div 
+          <div
             className="absolute left-1/2 top-1/2 md:hidden"
             style={{
               transform: 'translateX(-50%) translateY(calc(-50% - 10px)) scale(0.572)',
               transformOrigin: 'center center',
               width: '100%',
-              height: 'calc(100vh - 56px)',
+              height: '100vh',
               maxWidth: '100vw',
             }}
           >
@@ -207,11 +207,11 @@ export default function Home() {
                       {/* 카드 스타일 컨텐츠 - 모바일: 오른쪽 고정, 데스크톱: 좌우 교차 */}
                       <div className={`absolute bg-transparent border border-transparent rounded-lg transition-all duration-200 w-[calc(100%-4rem)] md:w-[200px] left-4 pl-8 pr-4 pt-4 pb-4 ${isLeft ? 'md:right-1/2 md:left-auto md:text-right md:pr-4 md:pl-4 md:mr-[5px]' : 'md:left-1/2 md:pl-4 md:pr-4 md:ml-[5px]'}`}>
                         <div className={`flex items-center gap-3 mb-2 ${isLeft ? 'md:justify-end' : ''}`}>
-                          <div className="text-[#2F2C31] text-xs" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                          <div className="text-[#2F2C31] text-xs bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                             {item.date}
                           </div>
                         </div>
-                        <div className="text-[#2f2c31] leading-normal tracking-[-0.03em] md:tracking-normal" style={{ fontFamily: 'var(--font-noto-serif-kr)', wordBreak: 'keep-all' }}>
+                        <div className="text-[#2f2c31] font-sans leading-normal tracking-[-0.03em] md:tracking-normal" style={{ wordBreak: 'keep-all' }}>
                           {item.text}
                         </div>
                       </div>

@@ -4,6 +4,8 @@ import { Noto_Sans_KR, Noto_Serif_KR, EB_Garamond, Baskervville } from "next/fon
 import localFont from "next/font/local";
 import "./globals.css";
 import { useEffect } from "react";
+import { AudioProvider } from "@/context/AudioContext";
+import BGMController from "@/components/ui/BGMController";
 
 // 기본 폰트: Noto Sans KR
 const notoSansKR = Noto_Sans_KR({
@@ -132,7 +134,10 @@ export default function RootLayout({
         <meta name="keywords" content="Genesis Order, 창세의 질서, 세계관, TRPG" />
       </head>
       <body className="font-sans antialiased text-[#2f2c31]">
-        {children}
+        <AudioProvider>
+          {children}
+          <BGMController />
+        </AudioProvider>
       </body>
     </html>
   );

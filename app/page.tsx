@@ -136,7 +136,7 @@ export default function Home() {
         </section>
 
         {/* Spacing Section */}
-        <div className="h-[120px]"></div>
+        <div className="h-[300px]"></div>
 
         {/* Story Section */}
         <section className="py-16 md:py-20 px-4 md:px-8">
@@ -154,7 +154,7 @@ export default function Home() {
         </section>
 
         {/* Spacing Section */}
-        <div className="h-[120px]"></div>
+        <div className="h-[300px]"></div>
 
         {/* Wordmark Section */}
         <section className="px-4 md:px-8">
@@ -178,7 +178,7 @@ export default function Home() {
         </section>
 
         {/* Spacing Section */}
-        <div className="h-[80px]"></div>
+        <div className="h-[240px]"></div>
 
         {/* Schedule Timeline */}
         <section className="py-12 md:py-12 px-4 md:px-8">

@@ -94,7 +94,9 @@ export default function AnnouncementsPage() {
               <span key="10"><strong>36시간 이상 통보 없는 미접속</strong> 시 경고 없이 제명됩니다. 제명을 피하기 위한 퍼블릭 툿 및 단발성 멘션은 유효하지 않습니다.</span>,
               "타 커뮤니티에서 활동했거나 관계가 없는 캐릭터의 재활용이 가능합니다. (1캐 N커, 1커 N캐 불가.)",
               <span key="12">공개 NMPC 제외, 비밀 NMPC를 포함하여 러닝 최소 인원은 <strong>20명</strong>, 최대 인원은 <strong>30명</strong>입니다. 성비는 극단적으로 치우치지 않는 한 크게 고려하지 않습니다. 합격 인원이 부족할 시, 본 커뮤니티는 동결에 들어갑니다.</span>,
-              <span key="13">연락처 교환을 위한 최소 툿은 <strong>300툿</strong>입니다.</span>,
+              <span key="13">본 커뮤니티는 <strong>준 실시간 합격자 발표제</strong>를 시행합니다. 신청서 접수 24시간 이내에 합격 가능성이 ● ○ △ ✕ 의 4가지 기호로 현황 시트에 표기됩니다. 가능성은 더 많은 신청서가 접수됨에 따라 실시간으로 변동합니다.</span>,
+              <span key="14">한 명당 하나의 신청서만 제출 가능하나, 합격 가능성이 희박한 신청서는 철회한 후 새로운 신청서를 제출할 수 있습니다.</span>,
+              <span key="15">연락처 교환을 위한 최소 툿은 <strong>300툿</strong>입니다.</span>,
               "운영진은 공지 미숙지로 인해 발생하는 일에 책임을 지지 않습니다.",
             ].map((text, index) => (
               <div key={index} className="flex items-start leading-normal md:leading-relaxed">

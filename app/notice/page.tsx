@@ -42,6 +42,8 @@ export default function AnnouncementsPage() {
                 { date: "12/13(토) 23:59", text: "가산점 신청서 접수 마감" },
                 { date: "12/14(일) 00:00", text: "일반 신청서 접수 시작" },
                 { date: "12/18(목) 23:59", text: "일반 신청서 접수 마감" },
+                { date: "12/19(금) 10:00", text: "조율 DM 발송" },
+                { date: "12/19(금) 17:00", text: "합격자 발표" },
                 { date: "12/20(토) 22:00", text: "개장 및 인트로" },
                 { date: "01/03(토) 22:00", text: "아웃트로" },
               ].map((item, index) => {

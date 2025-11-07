@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -24,10 +25,8 @@ export default function SystemPage() {
           <section className="mb-16">
             <div className="relative overflow-hidden p-6 rounded-lg bg-transparent">
               <div className="relative z-10">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-sm">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-center text-sm">
                   {[
-                    { id: 'notice', label: 'NOTICE' },
-                    { id: 'setting', label: 'SETTING' },
                     { id: 'suspect', label: 'SUSPECT' },
                     { id: 'condition', label: 'CONDITION' },
                     { id: 'ability', label: 'ABILITY' },
@@ -482,7 +481,7 @@ export default function SystemPage() {
                   ].map((text, index) => (
                     <div key={index} className="flex items-start leading-normal md:leading-relaxed">
                       <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                        ⦿
+                        ○
                       </span>
                       <span>{text}</span>
                     </div>
@@ -506,7 +505,7 @@ export default function SystemPage() {
                   ].map((text, index) => (
                     <div key={index} className="flex items-start leading-normal md:leading-relaxed">
                       <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                        ⦿
+                        ○
                       </span>
                       <span>{text}</span>
                     </div>
@@ -514,9 +513,11 @@ export default function SystemPage() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-[#2f2c31]/20 space-y-2 text-center text-sm">
+              <div className="h-[30px]"></div>
+
+              <div className="pt-6 border-t border-[#2f2c31]/20 space-y-2 text-center text-sm">
                 <p className="leading-normal md:leading-relaxed">더욱 자세한 사항은 개장 후 시스템 문서를 통해 공개됩니다.</p>
-                <p className="leading-normal md:leading-relaxed">캐릭터 설정과 관련한 정보는 캐릭터 가이드 문서에서 확인 바랍니다.</p>
+                <p className="leading-normal md:leading-relaxed">캐릭터 설정과 관련한 정보는 <Link href="/character"><strong className="highlight-bold cursor-pointer hover:opacity-80 transition-opacity">캐릭터 가이드</strong></Link>에서 확인 바랍니다.</p>
               </div>
             </div>
           </section>

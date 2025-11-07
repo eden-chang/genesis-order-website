@@ -19,8 +19,9 @@ export default function Footer() {
           <Link href="/notice" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>공지</Link>
           <Link href="/world" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>세계관</Link>
           <Link href="/system" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>시스템</Link>
-          <Link href="/character" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>가이드</Link>
+          <Link href="/character" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>캐릭터</Link>
           <Link href="/application" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>신청서</Link>
+          <Link href="/questions" className="text-sm text-[#655e69] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-regular)' }}>질의응답</Link>
         </nav>
         <div className="pt-4 border-t border-[#f2f2f2]">
           <p className="text-xs text-[#655e69] text-center" style={{ fontFamily: 'var(--font-pretendard-light)' }}>© 2025 Genesis Order</p>

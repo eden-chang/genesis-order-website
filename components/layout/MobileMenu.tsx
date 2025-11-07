@@ -114,7 +114,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 style={{ fontFamily: 'var(--font-pretendard-semibold)' }}
                 onClick={onClose}
               >
-                QNA
+                질의응답
               </Link>
             </li>
           </ul>

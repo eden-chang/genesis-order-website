@@ -66,7 +66,7 @@ export default function Header() {
             <li><Link href="/system" className="text-base text-[#39313F] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-semibold)' }}>시스템</Link></li>
             <li><Link href="/character" className="text-base text-[#39313F] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-semibold)' }}>캐릭터</Link></li>
             <li><Link href="/application" className="text-base text-[#39313F] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-semibold)' }}>신청서</Link></li>
-            <li><Link href="/questions" className="text-base text-[#39313F] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-semibold)' }}>QNA</Link></li>
+            <li><Link href="/questions" className="text-base text-[#39313F] hover:text-[#89818e] transition-colors" style={{ fontFamily: 'var(--font-pretendard-semibold)' }}>질의응답</Link></li>
           </ul>
 
           {/* 모바일 햄버거 버튼 */}

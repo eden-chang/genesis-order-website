@@ -10,7 +10,7 @@ export default function AnnouncementsPage() {
 
         <div className="text-center my-12">
           <h1 className="section-title mb-4">NOTICE</h1>
-          <p className="text-lg text-[#423e43]" style={{ fontFamily: 'var(--font-noto-serif-kr)' }}>공지사항</p>
+          <p className="text-lg text-[#423e43]" style={{ fontFamily: 'var(--font-pretendard-medium)' }}>공지사항</p>
         </div>
 
         {/* Content Warning */}
@@ -73,7 +73,7 @@ export default function AnnouncementsPage() {
 
         {/* Notice */}
         <section className="mb-16">
-          <h2 className="semi-header mb-6">
+          <h2 className="semi-header mb-10">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
               NOTICE
             </span>
@@ -107,7 +107,7 @@ export default function AnnouncementsPage() {
 
         {/* Rules */}
         <section className="mb-16">
-          <h2 className="semi-header mb-6">
+          <h2 className="semi-header mb-10">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
               RULES
             </span>

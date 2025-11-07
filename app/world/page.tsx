@@ -27,7 +27,7 @@ export default function WorldviewPage() {
 
         <div className="text-center my-12">
           <h1 className="section-title mb-4">WORLD</h1>
-          <p className="text-lg text-[#423e43]" style={{ fontFamily: 'var(--font-noto-serif-kr)' }}>세계관</p>
+          <p className="text-lg text-[#423e43]" style={{ fontFamily: 'var(--font-pretendard-medium)' }}>세계관</p>
         </div>
 
         {/* Notice */}
@@ -35,11 +35,11 @@ export default function WorldviewPage() {
           <div className="relative overflow-hidden p-6 rounded-lg border-2 border-[#2f2c31] bg-transparent">
             {/* Content */}
             <div className="relative z-10 space-y-1 text-[#2f2c31] leading-normal text-center tracking-[-0.03em] md:tracking-normal">
-              <p>본 커뮤니티는 현실의 종교적 요소에서 일부 모티브를 얻은 <strong>창작물</strong>입니다.</p>
+              <p>본 커뮤니티는 현실의 종교적 요소에서 일부 모티브를 얻은 <strong className="highlight-bold">창작물</strong>입니다.</p>
               <p>운영진은 실존하는 어떠한 종교, 교단, 신앙 체계도 옹호하거나 비난하지 않습니다.</p>
-              <p>모든 설정은 <strong>가상의 세계관 내 서사적 장치</strong>로만 사용됩니다.</p>
+              <p>모든 설정은 <strong className="highlight-bold">가상의 세계관 내 서사적 장치</strong>로만 사용됩니다.</p>
               <br />
-              <p className="mt-6">본 커뮤니티의 세계관은 <strong>〈구약 성경〉</strong> 및 마거릿 애트우드의 소설 <strong>〈시녀 이야기〉</strong>에서 영감을 받았습니다.</p>
+              <p className="mt-6">본 커뮤니티의 세계관은 <strong className="highlight-bold">〈구약 성경〉</strong> 및 마거릿 애트우드의 소설 <strong className="highlight-bold">〈시녀 이야기〉</strong>에서 영감을 받았습니다.</p>
             </div>
           </div>
         </section>
@@ -67,7 +67,7 @@ export default function WorldviewPage() {
 
         {/* I. 창세교의 씨앗 */}
         <section className="mb-16">
-          <h2 className="text-xl font-bold mb-6">
+          <h2 className="text-xl font-bold mb-10 text-center">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-noto-serif-kr)', fontWeight: 'bold' }}>
               I. 창세교의 씨앗
             </span>
@@ -82,7 +82,7 @@ export default function WorldviewPage() {
 
         {/* II. 신의 승리 */}
         <section className="mb-16">
-          <h2 className="text-xl font-bold mb-6">
+          <h2 className="text-xl font-bold mb-10 text-center">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-noto-serif-kr)', fontWeight: 'bold' }}>
               II. 신의 승리
             </span>
@@ -95,7 +95,7 @@ export default function WorldviewPage() {
 
         {/* III. 길리아드 */}
         <section className="mb-16">
-          <h2 className="text-xl font-bold mb-6">
+          <h2 className="text-xl font-bold mb-10 text-center">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-noto-serif-kr)', fontWeight: 'bold' }}>
               III. 길리아드
             </span>
@@ -109,7 +109,7 @@ export default function WorldviewPage() {
 
         {/* IV. 또 다른 세계 */}
         <section className="mb-16">
-          <h2 className="text-xl font-bold mb-6">
+          <h2 className="text-xl font-bold mb-10 text-center">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-noto-serif-kr)', fontWeight: 'bold' }}>
               IV. 또 다른 세계
             </span>
@@ -121,7 +121,7 @@ export default function WorldviewPage() {
 
         {/* V. 정화된 평화 */}
         <section className="mb-16">
-          <h2 className="text-xl font-bold mb-6">
+          <h2 className="text-xl font-bold mb-10 text-center">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-noto-serif-kr)', fontWeight: 'bold' }}>
               V. 정화된 평화
             </span>
@@ -134,7 +134,7 @@ export default function WorldviewPage() {
 
         {/* VI. 물밑의 전쟁 */}
         <section className="mb-16">
-          <h2 className="text-xl font-bold mb-6">
+          <h2 className="text-xl font-bold mb-10 text-center">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-noto-serif-kr)', fontWeight: 'bold' }}>
               VI. 물밑의 전쟁
             </span>
@@ -149,7 +149,7 @@ export default function WorldviewPage() {
 
         {/* VII. 현재 */}
         <section className="mb-16">
-          <h2 className="text-xl font-bold mb-6">
+          <h2 className="text-xl font-bold mb-10 text-center">
             <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-noto-serif-kr)', fontWeight: 'bold' }}>
               VII. 현재
             </span>

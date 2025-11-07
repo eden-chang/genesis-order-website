@@ -33,6 +33,13 @@
     -moz-osx-font-smoothing: grayscale;
     font-weight: 700;
   }
+
+  .highlight-bold {
+    font-weight: 700;
+    background-color: #fff89f;
+    padding: 0 0.15rem;
+    border-radius: 0.125rem;
+  }
 }
 
 @layer components {
@@ -63,6 +70,7 @@
   .semi-header {
     font-size: 1.25rem;
     font-weight: bold;
+    text-align: center;
   }
 
   .document-content {

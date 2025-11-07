@@ -17,16 +17,13 @@ export default function SystemPage() {
           {/* Page Title */}
           <div className="text-center my-12">
             <h1 className="section-title mb-4">SYSTEM</h1>
-            <p className="text-lg text-[#423e43]" style={{ fontFamily: 'var(--font-noto-serif-kr)' }}>시스템</p>
+            <p className="text-lg text-[#423e43]" style={{ fontFamily: 'var(--font-pretendard-medium)' }}>시스템</p>
           </div>
 
           {/* Table of Contents */}
           <section className="mb-16">
-            <div className="relative border-2 border-[#2f2c31] overflow-hidden p-6 rounded-lg bg-transparent">
+            <div className="relative overflow-hidden p-6 rounded-lg bg-transparent">
               <div className="relative z-10">
-                <h2 className="text-base text-[#2f2c31] mb-4 text-center" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
-                  목차
-                </h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-sm">
                   {[
                     { id: 'notice', label: 'NOTICE' },
@@ -54,12 +51,12 @@ export default function SystemPage() {
 
           {/* NOTICE Section */}
           <section id="notice" className="mb-16 scroll-mt-24">
-            <h2 className="semi-header mb-6">
+            <h2 className="semi-header mb-10">
               <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
                 NOTICE
               </span>
             </h2>
-            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
+            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.01em] md:tracking-normal">
               {[
                 <span key="1">본 커뮤니티는 <strong>성인가 수위 프리 커뮤니티</strong>로, <strong>폭력, 상해, 살해</strong>와 관련된 내용을 다룹니다. 운영진은 이와 같은 비윤리적 행위를 옹호하지 않습니다.</span>,
                 "모든 스토리 진행은 오후 10시에 시작합니다.",
@@ -76,12 +73,12 @@ export default function SystemPage() {
 
           {/* SETTING Section */}
           <section id="setting" className="mb-16 scroll-mt-24">
-            <h2 className="semi-header mb-6">
+            <h2 className="semi-header mb-10">
               <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
                 SETTING
               </span>
             </h2>
-            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
+            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.01em] md:tracking-normal">
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
@@ -105,12 +102,12 @@ export default function SystemPage() {
 
           {/* SUSPECT Section */}
           <section id="suspect" className="mb-16 scroll-mt-24">
-            <h2 className="semi-header mb-6">
+            <h2 className="semi-header mb-10">
               <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
                 SUSPECT
               </span>
             </h2>
-            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
+            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.01em] md:tracking-normal">
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
@@ -134,17 +131,17 @@ export default function SystemPage() {
 
           {/* CONDITION Section */}
           <section id="condition" className="mb-16 scroll-mt-24">
-            <h2 className="semi-header mb-6">
+            <h2 className="semi-header mb-10">
               <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
                 CONDITION
               </span>
             </h2>
-            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
+            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.01em] md:tracking-normal">
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
                 </span>
-                <span>모든 캐릭터는 <strong>[상태]</strong>를 지닙니다. 상태는 일종의 자원으로, 캐릭터의 행동에 영향을 미칩니다.</span>
+                <span>모든 캐릭터는 <strong className="highlight-bold">상태</strong>를 지닙니다. 상태는 일종의 자원으로, 캐릭터의 행동에 영향을 미칩니다.</span>
               </div>
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
@@ -156,37 +153,37 @@ export default function SystemPage() {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-[#2f2c31]">
                   <thead>
-                    <tr className="bg-[#fff136]">
-                      <th className="border border-[#2f2c31] px-4 py-3 text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                    <tr style={{ backgroundColor: '#fff682' }}>
+                      <th className="border border-[#2f2c31] px-4 py-2 text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         상태
                       </th>
-                      <th className="border border-[#2f2c31] px-4 py-3 text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                      <th className="border border-[#2f2c31] px-4 py-2 text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         설명
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-[#2f2c31] px-4 py-3" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                      <td className="border border-[#2f2c31] px-4 py-2" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         기운
                       </td>
-                      <td className="border border-[#2f2c31] px-4 py-3">
+                      <td className="border border-[#2f2c31] px-4 py-2">
                         매일 0시, 1점으로 초기화. 조사 1회당 1점을 소모합니다.
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-[#2f2c31] px-4 py-3" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                      <td className="border border-[#2f2c31] px-4 py-2" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         행운
                       </td>
-                      <td className="border border-[#2f2c31] px-4 py-3">
+                      <td className="border border-[#2f2c31] px-4 py-2">
                         매일 0시, 0점으로 초기화. 조사 시 추가 보정치로 작용합니다.
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-[#2f2c31] px-4 py-3" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                      <td className="border border-[#2f2c31] px-4 py-2" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         이성
                       </td>
-                      <td className="border border-[#2f2c31] px-4 py-3">
+                      <td className="border border-[#2f2c31] px-4 py-2">
                         최대 10점, 최소 0점. 일정 수치 이하로 낮아질 경우 불리점이 주어집니다.
                       </td>
                     </tr>
@@ -198,17 +195,17 @@ export default function SystemPage() {
 
           {/* ABILITY Section */}
           <section id="ability" className="mb-16 scroll-mt-24">
-            <h2 className="semi-header mb-6">
+            <h2 className="semi-header mb-10">
               <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
                 ABILITY
               </span>
             </h2>
-            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
+            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.01em] md:tracking-normal">
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
                 </span>
-                <span>캐릭터는 네 가지 <strong>[능력]</strong>을 가집니다. 신청서 작성 시 총 6점을 자유롭게 배분할 수 있습니다. (각 능력치마다 최소 0점, 최대 5점)</span>
+                <span>캐릭터는 네 가지 <strong className="highlight-bold">능력</strong>을 가집니다. 신청서 작성 시 총 6점을 자유롭게 배분할 수 있습니다. (각 능력치마다 최소 0점, 최대 5점)</span>
               </div>
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
@@ -220,45 +217,45 @@ export default function SystemPage() {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-[#2f2c31]">
                   <thead>
-                    <tr className="bg-[#fff136]">
-                      <th className="border border-[#2f2c31] px-4 py-3 text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                    <tr style={{ backgroundColor: '#fff682' }}>
+                      <th className="border border-[#2f2c31] px-4 py-2 text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         능력
                       </th>
-                      <th className="border border-[#2f2c31] px-4 py-3 text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                      <th className="border border-[#2f2c31] px-4 py-2 text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         설명
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-[#2f2c31] px-4 py-3" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                      <td className="border border-[#2f2c31] px-4 py-2" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         행동
                       </td>
-                      <td className="border border-[#2f2c31] px-4 py-3">
+                      <td className="border border-[#2f2c31] px-4 py-2">
                         몸을 움직이고 물리적 변화를 만들어 냅니다.
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-[#2f2c31] px-4 py-3" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                      <td className="border border-[#2f2c31] px-4 py-2" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         논리
                       </td>
-                      <td className="border border-[#2f2c31] px-4 py-3">
+                      <td className="border border-[#2f2c31] px-4 py-2">
                         정보에서 통찰을 얻거나 뛰어난 말솜씨로 타인을 설득합니다.
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-[#2f2c31] px-4 py-3" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                      <td className="border border-[#2f2c31] px-4 py-2" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         관찰
                       </td>
-                      <td className="border border-[#2f2c31] px-4 py-3">
+                      <td className="border border-[#2f2c31] px-4 py-2">
                         주변을 세밀히 살피고, 대화에 귀 기울여 단서를 찾아냅니다.
                       </td>
                     </tr>
                     <tr>
-                      <td className="border border-[#2f2c31] px-4 py-3" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                      <td className="border border-[#2f2c31] px-4 py-2" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                         직감
                       </td>
-                      <td className="border border-[#2f2c31] px-4 py-3">
+                      <td className="border border-[#2f2c31] px-4 py-2">
                         본능과 감각으로 숨겨진 의미를 포착합니다.
                       </td>
                     </tr>
@@ -270,29 +267,29 @@ export default function SystemPage() {
 
           {/* INVESTIGATION Section */}
           <section id="investigation" className="mb-16 scroll-mt-24">
-            <h2 className="semi-header mb-6">
+            <h2 className="semi-header mb-10">
               <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
                 INVESTIGATION
               </span>
             </h2>
-            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
+            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.01em] md:tracking-normal">
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
                 </span>
-                <span><strong>[조사]</strong>는 마스토돈 자동봇을 사용해 정해진 시간 없이 진행합니다.</span>
+                <span><strong className="highlight-bold">[조사]</strong>는 마스토돈 자동봇을 사용해 정해진 시간 없이 진행합니다.</span>
               </div>
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
                 </span>
-                <span>정해진 일차의 0시에 <strong>[단서 목록]</strong>이 공개됩니다. <strong>[단서]</strong>를 조사하여 살인 사건 및 커뮤니티의 진상과 관련된 정보를 얻을 수 있습니다.</span>
+                <span>정해진 일차의 0시에 <strong className="highlight-bold">단서 목록</strong>이 공개됩니다. <strong className="highlight-bold">단서</strong>를 조사하여 살인 사건 및 커뮤니티의 진상과 관련된 정보를 얻을 수 있습니다.</span>
               </div>
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
                 </span>
-                <span><strong>[조사]</strong>를 시도하면 <strong>10면체 주사위</strong>를 굴립니다. 주사위 굴림값과 요구 능력치 1점당 +1을 합산하여 주사위 결과를 계산합니다.</span>
+                <span><strong className="highlight-bold">[조사]</strong>를 시도하면 <strong>10면체 주사위</strong>를 굴립니다. 주사위 굴림값과 요구 능력치 1점당 +1을 합산하여 주사위 결과를 계산합니다.</span>
               </div>
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
@@ -322,61 +319,61 @@ export default function SystemPage() {
                     <div className="overflow-x-auto">
                       <table className="w-full border-collapse border border-[#2f2c31]">
                         <thead>
-                          <tr className="bg-[#fff136]">
-                            <th className="border border-[#2f2c31] px-4 py-3 text-left text-sm" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                          <tr style={{ backgroundColor: '#fff682' }}>
+                            <th className="border border-[#2f2c31] px-4 py-2 text-left text-sm" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                               단서
                             </th>
-                            <th className="border border-[#2f2c31] px-4 py-3 text-left text-sm" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                            <th className="border border-[#2f2c31] px-4 py-2 text-left text-sm" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                               능력
                             </th>
-                            <th className="border border-[#2f2c31] px-4 py-3 text-left text-sm" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
-                              목표치
+                            <th className="border border-[#2f2c31] px-4 py-2 text-center text-sm" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                              목표
                             </th>
-                            <th className="border border-[#2f2c31] px-4 py-3 text-left text-sm" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
+                            <th className="border border-[#2f2c31] px-4 py-2 text-left text-sm" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>
                               설명
                             </th>
                           </tr>
                         </thead>
                         <tbody className="text-sm">
                           <tr>
-                            <td className="border border-[#2f2c31] px-4 py-3">
-                              창고 바닥
+                            <td className="border border-[#2f2c31] px-4 py-2">
+                              바닥
                             </td>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2">
                               관찰
                             </td>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2 text-center">
                               3
                             </td>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2">
                               분명 어제 청소한 창고 바닥이 끈적거린다. 한번 살펴볼까?
                             </td>
                           </tr>
                           <tr>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2">
                               하녀
                             </td>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2">
                               논리
                             </td>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2 text-center">
                               5
                             </td>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2">
                               창고 문 앞에 서 있는 하녀. 어딘가 불안해 보인다. 상황을 설명하라고 설득할 수 있을 것 같다.
                             </td>
                           </tr>
                           <tr>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2">
                               하녀
                             </td>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2">
                               직감
                             </td>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2 text-center">
                               8
                             </td>
-                            <td className="border border-[#2f2c31] px-4 py-3">
+                            <td className="border border-[#2f2c31] px-4 py-2">
                               창고 문 앞에 서 있는 하녀. 어딘가 불안해 보인다. 왜인지 차를 한 잔 가져다주고 싶어졌다.
                             </td>
                           </tr>
@@ -400,21 +397,23 @@ export default function SystemPage() {
                 {exampleInvestigationOpen && (
                   <div className="p-4 border-t border-[#2f2c31] space-y-3 text-sm">
                     <div>
-                      <p className="mb-2"><strong>논리 능력치가 2인 캐릭터의 명령어 사용:</strong></p>
+                      <p className="mb-2"><strong>논리 능력치가 2인 캐릭터의 명령어 사용</strong></p>
                       <div className="bg-[#f5f5f5] px-3 py-2 rounded">
-                        [조사/하녀/논리]
+                        @SYSTEM (주변을 둘러보다 하녀에게 다가간다.) 좋은 아침. 무슨 일 있어요? [조사/하녀/논리]
                       </div>
                     </div>
                     <div>
-                      <p className="mb-2"><strong>결과 문구:</strong></p>
+                      <p className="mb-2"><strong>자동봇의 결과값 계산</strong></p>
                       <div className="bg-[#f5f5f5] px-3 py-2 rounded">
-                        주사위 값 3 + 논리 보정 2 = 5. 조사 성공
+                        주사위 값 3 + 논리 보정 2 = 5 (목표치 5 달성, 조사 성공)
                       </div>
                     </div>
                     <div>
-                      <p className="mb-2"><strong>조사 결과:</strong></p>
-                      <div className="bg-[#f5f5f5] px-3 py-2 rounded">
-                        하녀를 어쩌고저쩌고 설득하자 그녀가 사실을 털어놓았다.
+                      <p className="mb-2"><strong>멘션으로 전송되는 조사 결과</strong></p>
+                      <div className="bg-[#f5f5f5] px-3 py-2 rounded whitespace-pre-line">
+                        {`➭ 결과 5, 논리 판정 성공
+
+당신은 하녀와 짧은 대화를 나눈다. 처음에는 아무 일도 없다고 주장하던 그녀는 곧 당신의 설득에 넘어간다. 하녀의 말에 따르면, 어젯밤 창고 문 안쪽에서 이상한 소리를 들었는데, 오늘 확인해보니 식칼이 두 개 없어졌다고 한다.`}
                       </div>
                     </div>
                   </div>
@@ -425,12 +424,12 @@ export default function SystemPage() {
 
           {/* TRAILING Section */}
           <section id="trailing" className="mb-16 scroll-mt-24">
-            <h2 className="semi-header mb-6">
+            <h2 className="semi-header mb-10">
               <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
                 TRAILING
               </span>
             </h2>
-            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
+            <div className="space-y-3 text-[#2f2c31] font-sans tracking-[-0.01em] md:tracking-normal">
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
@@ -441,7 +440,7 @@ export default function SystemPage() {
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
                 </span>
-                <span>모든 캐릭터는 하루 1회, 범인이라고 의심하는 한 명의 캐릭터를 <strong>[추적]</strong>할 수 있습니다. 추적은 기운을 소모하지 않습니다.</span>
+                <span>모든 캐릭터는 하루 1회, 범인이라고 의심하는 한 명의 캐릭터를 <strong className="highlight-bold">[추적]</strong>할 수 있습니다. 추적은 기운을 소모하지 않습니다.</span>
               </div>
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
@@ -454,12 +453,12 @@ export default function SystemPage() {
 
           {/* EKLE Section */}
           <section id="ekle" className="mb-16 scroll-mt-24">
-            <h2 className="semi-header mb-6">
+            <h2 className="semi-header mb-10">
               <span className="text-[#2f2c31] bg-[#fff136] px-2 py-1 rounded" style={{ fontFamily: 'var(--font-proximanova-black)' }}>
                 EKLE
               </span>
             </h2>
-            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.03em] md:tracking-normal">
+            <div className="space-y-4 text-[#2f2c31] font-sans tracking-[-0.01em] md:tracking-normal">
               <div className="flex items-start leading-normal md:leading-relaxed">
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
@@ -468,10 +467,15 @@ export default function SystemPage() {
               </div>
 
               <div>
-                <p className="mb-3 leading-normal md:leading-relaxed" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>에클의 획득처는 다음과 같습니다.</p>
-                <div className="space-y-2">
+                <div className="flex items-start leading-normal md:leading-relaxed mb-2">
+                  <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+                    ⦿
+                  </span>
+                  <span>에클의 획득처는 다음과 같습니다.</span>
+                </div>
+                <div className="ml-6 space-y-2">
                   {[
-                    <span key="1"><strong>[기도]</strong> 명령어 사용 시 매일 1E 지급 (출석)</span>,
+                    <span key="1"><strong className="highlight-bold">[기도]</strong> 명령어 사용 시 매일 1E 지급 (출석)</span>,
                     "50툿 당 1E 지급",
                     "조사 중 획득",
                     "선물 혹은 양도",
@@ -487,8 +491,13 @@ export default function SystemPage() {
               </div>
 
               <div>
-                <p className="mb-3 leading-normal md:leading-relaxed" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>에클의 사용처는 다음과 같습니다.</p>
-                <div className="space-y-2">
+                <div className="flex items-start leading-normal md:leading-relaxed mb-2">
+                  <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
+                    ⦿
+                  </span>
+                  <span>에클의 사용처는 다음과 같습니다.</span>
+                </div>
+                <div className="ml-6 space-y-2">
                   {[
                     "상점",
                     "은총의 제단 (도박 시스템)",
@@ -505,19 +514,9 @@ export default function SystemPage() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-[#2f2c31]/20 space-y-3">
-                <div className="flex items-start leading-normal md:leading-relaxed">
-                  <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                    ⦿
-                  </span>
-                  <span>더욱 자세한 사항은 개장 후 시스템 문서를 통해 공개됩니다.</span>
-                </div>
-                <div className="flex items-start leading-normal md:leading-relaxed">
-                  <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
-                    ⦿
-                  </span>
-                  <span>캐릭터 설정과 관련한 정보는 캐릭터 가이드 문서에서 확인 바랍니다.</span>
-                </div>
+              <div className="mt-6 pt-6 border-t border-[#2f2c31]/20 space-y-2 text-center text-sm">
+                <p className="leading-normal md:leading-relaxed">더욱 자세한 사항은 개장 후 시스템 문서를 통해 공개됩니다.</p>
+                <p className="leading-normal md:leading-relaxed">캐릭터 설정과 관련한 정보는 캐릭터 가이드 문서에서 확인 바랍니다.</p>
               </div>
             </div>
           </section>

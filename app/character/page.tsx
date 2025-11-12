@@ -73,7 +73,7 @@ export default function CharactersPage() {
                 {[
                   "영사 (1)",
                   "저택 사용인 (3)",
-                  "공개 NMPC와 아는 사이 (2)",
+                  "공개 NMPC와 사적으로 아는 사이 (2)",
                   "유명인 (3)",
                   "정치인 (2)",
                   "진영 속임 (4)"

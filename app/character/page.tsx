@@ -76,6 +76,7 @@ export default function CharactersPage() {
                   "공개 NMPC와 아는 사이 (2)",
                   "유명인 (3)",
                   "정치인 (2)",
+                  "진영 속임 (4)"
                 ].map((text, index) => (
                   <div key={index} className="flex items-start leading-normal md:leading-relaxed">
                     <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>

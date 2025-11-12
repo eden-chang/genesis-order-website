@@ -50,8 +50,8 @@ export default function ApplicationPage() {
                 >
                   사본 만들기
                 </a>
-                {/* <a
-                  href="#"
+                  <a
+                  href="https://docs.google.com/spreadsheets/d/1xuPOQR5hKNfOoUl_5b55GbASovKsXnXWgK_-IC0h0Gs/edit?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-white text-[#2f2c31] px-6 py-2 rounded-lg hover:bg-[#fff136] transition-colors max-w-[140px] w-[calc(50%-6px)] sm:w-[140px] border border-gray-300"
@@ -59,7 +59,7 @@ export default function ApplicationPage() {
                 >
                   접수 현황
                 </a>
-                <a
+              {/* <a
                   href="#"
                   target="_blank"
                   rel="noopener noreferrer"

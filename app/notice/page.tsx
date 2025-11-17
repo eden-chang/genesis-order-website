@@ -148,6 +148,7 @@ export default function AnnouncementsPage() {
                 "모든 종류의 편파 및 차별",
                 "공개된 장소에서 러닝 타래 작성, 스토리, 조사 유출",
                 "분위기를 해치는 메타 발언, 잦은 개그, 이모티콘 및 초성 사용",
+                "괄호체를 이용한 잦은 사념 대화",
                 "1시간 이상 이어지는 타임라인 대화",
                 "운영진의 판단하에 경고가 필요한 사항",
               ].map((text, index) => (
@@ -174,6 +175,7 @@ export default function AnnouncementsPage() {
                 "러닝 중 고백",
                 "러닝 중 합의되지 않은 자살, 살해",
                 "엔딩 전 개인적인 연락처 교환",
+                "생성형 AI를 이용한 역극",
                 "운영진의 판단하에 제명이 필요한 사항",
               ].map((text, index) => (
                 <div key={index} className="flex items-start">

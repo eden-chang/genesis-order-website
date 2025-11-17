@@ -182,7 +182,7 @@ export default function QnAPage() {
                 </button>
                 {noticeQ1Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
-                    <p className="leading-relaxed">타 러너가 참고해야 하는 역극 조율 사항은 추후 합격자 가이드를 통해 기재 방법을 안내할 예정입니다. 따라서 신청서 공개란에는 기재를 삼가 주시길 당부드립니다. 만약 합격자 선정 과정에서 운영진이 참고해야 하는 사항이 있다면 비고란에 기재 바랍니다.</p>
+                    <p className="leading-relaxed">타 러너가 참고해야 하는 역극 조율 사항은 추후 합격자 가이드를 통해 작성 방식을 안내할 예정입니다. 따라서 신청서 공개란에는 기재를 삼가 주시길 당부드립니다. 만약 합격자 선정 과정에서 운영진이 참고해야 하는 사항이 있다면 비고란을 이용해 주세요.</p>
                   </div>
                 )}
               </div>

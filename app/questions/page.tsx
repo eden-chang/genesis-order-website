@@ -83,12 +83,12 @@ export default function QnAPage() {
                   className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
                   style={{ fontFamily: 'var(--font-pretendard-bold)' }}
                 >
-                  <span>예시 질문입니다.</span>
+                  <span>세계관 문서에 따르면 영사가 치장 비용을 제공했다고 하는데, 특별히 정해진 드레스코드나 복식이 있을까요?</span>
                   <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{charQ1Open ? '−' : '+'}</span>
                 </button>
                 {charQ1Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
-                    <p className="leading-relaxed">예시 답변입니다.</p>
+                    <p className="leading-relaxed">'에덴의 만찬'은 연회이기에 참석자는 정장, 드레스, 연미복을 착용해야 한다고 고지받았습니다. 참석자가 아닌 경우(근로자, 연주자 등)에는 적절한 의상을 착용하면 됩니다. 더불어 길리아드에서는 승전기념일과 같은 의미 있는 행사에는 무채색을 입는 것이 관례입니다.</p>
                   </div>
                 )}
               </div>

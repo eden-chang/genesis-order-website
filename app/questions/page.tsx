@@ -42,7 +42,7 @@ export default function QnAPage() {
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>마지막 갱신</span>
                     <span className="flex-[3] text-right">11.23</span>
-                    <span className="flex-[3] text-right">13:00</span>
+                    <span className="flex-[3] text-right">16:42</span>
                   </div>
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>Q&A 마감</span>
@@ -188,22 +188,22 @@ export default function QnAPage() {
               </div>
 
               {/* Q2 */}
-              {/* <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
                 <button
                   onClick={() => setNoticeQ2Open(!noticeQ2Open)}
                   onBlur={(e) => e.currentTarget.classList.remove('active')}
                   className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
                   style={{ fontFamily: 'var(--font-pretendard-bold)' }}
                 >
-                  <span>예시 질문입니다.</span>
+                  <span>트위터 오류로 인해 DM 알림을 받지 못하는 경우가 종종 발생합니다. 빠른 연락을 위해, 계정 란에 타 연락처(오픈채팅 링크 등)를 추가로 첨부해도 괜찮을까요?</span>
                   <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{noticeQ2Open ? '−' : '+'}</span>
                 </button>
                 {noticeQ2Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
-                    <p className="leading-relaxed">예시 답변입니다.</p>
+                    <p className="leading-relaxed">네, 가능합니다. 트위터 계정 아이디 아래에 추가 연락처를 자유롭게 기재해 주시기 바랍니다.</p>
                   </div>
                 )}
-              </div> */}
+              </div>
             </div>
           </section>
 

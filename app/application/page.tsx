@@ -34,7 +34,7 @@ export default function ApplicationPage() {
                 <span className="text-[#594c65] mr-3 flex-shrink-0" style={{ fontFamily: "var(--font-eb-garamond)" }}>
                   ⦿
                 </span>
-                <span>신청서 철회는 메일로 접수받습니다. [신청서 철회/캐릭터 이름/현황 닉네임]을 제목으로 한 메일을 mail@genesis-order.site로 전송합니다.</span>
+                <span>△ 혹은 ✕ 를 받은 신청서는 메일을 통해 제출을 철회할 수 있습니다. [신청서 철회/캐릭터 이름/현황 닉네임]을 제목으로 한 메일을 mail@genesis-order.site로 전송합니다.</span>
               </div>
             </div>
 
@@ -89,7 +89,7 @@ export default function ApplicationPage() {
             <br/>
 
             <p className="text-[#9e9e9e]">본 커뮤니티는 <strong>준 실시간 합격자 발표제</strong>를 시행합니다.</p>
-            <p className="text-[#9e9e9e]">신청서 접수 24시간 이내에 합격 가능성이 ● ○ △ ✕ 의 4가지 기호로 현황 시트에 표기됩니다. 가능성은 더 많은 신청서가 접수됨에 따라 실시간으로 변동합니다.</p>
+            <p className="text-[#9e9e9e]">신청서 접수 24시간 이내에 합격 가능성이 ● ◐ ○ △ ✕ 의 5가지 기호로 현황 시트에 표기됩니다. 가능성은 더 많은 신청서가 접수됨에 따라 실시간으로 변동합니다.</p>
             <br/>
 
             <p className="text-[#9e9e9e]"><strong>마감 1시간 이내</strong>에 접수된 신청서는 실시간 합발제를 적용하지 않습니다.</p>

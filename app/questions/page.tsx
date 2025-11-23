@@ -41,8 +41,8 @@ export default function QnAPage() {
                   {/* 3x3 Table for first 3 rows */}
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>마지막 갱신</span>
-                    <span className="flex-[3] text-right">12.10</span>
-                    <span className="flex-[3] text-right">12:25</span>
+                    <span className="flex-[3] text-right">11.23</span>
+                    <span className="flex-[3] text-right">13:00</span>
                   </div>
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>Q&A 마감</span>
@@ -88,7 +88,7 @@ export default function QnAPage() {
                 </button>
                 {charQ1Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
-                    <p className="leading-relaxed">'에덴의 만찬'은 연회이기에 참석자는 정장, 드레스, 연미복을 착용해야 한다고 고지받았습니다. 참석자가 아닌 경우(근로자, 연주자 등)에는 적절한 의상을 착용하면 됩니다. 더불어 길리아드에서는 승전기념일과 같은 의미 있는 행사에는 무채색을 입는 것이 관례입니다.</p>
+                    <p className="leading-relaxed">&apos;에덴의 만찬&apos;은 연회이기에 참석자는 정장, 드레스, 연미복을 착용해야 한다고 고지받았습니다. 참석자가 아닌 경우(근로자, 연주자 등)에는 적절한 의상을 착용하면 됩니다. 더불어 길리아드에서는 승전기념일과 같은 의미 있는 행사에는 무채색을 입는 것이 관례입니다.</p>
                   </div>
                 )}
               </div>

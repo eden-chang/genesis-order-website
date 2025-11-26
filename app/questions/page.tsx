@@ -13,6 +13,9 @@ export default function QnAPage() {
   // World section Q&A states
   const [worldQ1Open, setWorldQ1Open] = useState(false);
   const [worldQ2Open, setWorldQ2Open] = useState(false);
+  const [worldQ3Open, setWorldQ3Open] = useState(false);
+  const [worldQ4Open, setWorldQ4Open] = useState(false);
+  const [worldQ5Open, setWorldQ5Open] = useState(false);
 
   // Notice section Q&A states
   const [noticeQ1Open, setNoticeQ1Open] = useState(false);
@@ -41,8 +44,8 @@ export default function QnAPage() {
                   {/* 3x3 Table for first 3 rows */}
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>마지막 갱신</span>
-                    <span className="flex-[3] text-right">11.23</span>
-                    <span className="flex-[3] text-right">16:42</span>
+                    <span className="flex-[3] text-right">11.26</span>
+                    <span className="flex-[3] text-right">12:15</span>
                   </div>
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>Q&A 마감</span>
@@ -94,22 +97,22 @@ export default function QnAPage() {
               </div>
 
               {/* Q2 */}
-              {/* <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
                 <button
                   onClick={() => setCharQ2Open(!charQ2Open)}
                   onBlur={(e) => e.currentTarget.classList.remove('active')}
                   className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
                   style={{ fontFamily: 'var(--font-pretendard-bold)' }}
                 >
-                  <span>예시 질문입니다.</span>
+                  <span>북유럽 외 국적을 가진 중립 진영 캐릭터를 내도 될까요?</span>
                   <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{charQ2Open ? '−' : '+'}</span>
                 </button>
                 {charQ2Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
-                    <p className="leading-relaxed">예시 답변입니다.</p>
+                    <p className="leading-relaxed">네, 가능합니다. 특정 국가가 중립 국가라는 설정은 별도의 검토 없이 사용하셔도 되나, 충분한 설명을 덧붙여 주세요.</p>
                   </div>
                 )}
-              </div> */}
+              </div>
             </div>
           </section>
 
@@ -130,33 +133,69 @@ export default function QnAPage() {
                   className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
                   style={{ fontFamily: 'var(--font-pretendard-bold)' }}
                 >
-                  <span>예시 질문입니다.</span>
+                  <span>길리아드와 약속의 땅은 중립국 출신이라도 외국인의 입국이 엄격한가요? 외교관이 아닌 일개 사업가, 여행객, 이민 희망자의 입국도 허용하는 편인지 궁금합니다.</span>
                   <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{worldQ1Open ? '−' : '+'}</span>
                 </button>
                 {worldQ1Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
-                    <p className="leading-relaxed">예시 답변입니다.</p>
+                    <p className="leading-relaxed">외국인의 입국은 그 목적에 따라 입국 심사 절차가 다릅니다. 길리아드와 약속의 땅은 여행 등 민간인의 출입에는 개방적이나, 타 진영의 공적인 목적은 심사 절차가 보다 엄격합니다.</p>
                   </div>
                 )}
               </div>
 
               {/* Q2 */}
-              {/* <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
                 <button
                   onClick={() => setWorldQ2Open(!worldQ2Open)}
                   onBlur={(e) => e.currentTarget.classList.remove('active')}
                   className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
                   style={{ fontFamily: 'var(--font-pretendard-bold)' }}
                 >
-                  <span>예시 질문입니다.</span>
+                  <span>세계관 내 제2차 세계대전이 존재하지 않는 것으로 이해했는데, 그럼에도 불구하고 제1차의 명칭이 유지되나요?</span>
                   <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{worldQ2Open ? '−' : '+'}</span>
                 </button>
                 {worldQ2Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
-                    <p className="leading-relaxed">예시 답변입니다.</p>
+                    <p className="leading-relaxed">아니요, &apos;세계 대전&apos;이라고 통칭합니다.</p>
                   </div>
                 )}
-              </div> */}
+              </div>
+
+              {/* Q3 */}
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setWorldQ3Open(!worldQ3Open)}
+                  onBlur={(e) => e.currentTarget.classList.remove('active')}
+                  className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
+                  style={{ fontFamily: 'var(--font-pretendard-bold)' }}
+                >
+                  <span>중립 진영 캐릭터를 준비중인데, 기존 역사에서 제2차 세계대전의 영향으로 발생한 사건들을 개조해서 사용해도 될까요?</span>
+                  <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{worldQ3Open ? '−' : '+'}</span>
+                </button>
+                {worldQ3Open && (
+                  <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
+                    <p className="leading-relaxed">네, 가능합니다.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Q4 */}
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setWorldQ4Open(!worldQ4Open)}
+                  onBlur={(e) => e.currentTarget.classList.remove('active')}
+                  className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
+                  style={{ fontFamily: 'var(--font-pretendard-bold)' }}
+                >
+                  <span>개장 후 시점은 이미 저택 내 살인 사건이 일어난 후인가요?</span>
+                  <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{worldQ4Open ? '−' : '+'}</span>
+                </button>
+                {worldQ4Open && (
+                  <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
+                    <p className="leading-relaxed">아니요, 아직 일어나지 않았습니다.</p>
+                  </div>
+                )}
+              </div>
             </div>
           </section>
 

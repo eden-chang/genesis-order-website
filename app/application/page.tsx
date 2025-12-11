@@ -59,8 +59,8 @@ export default function ApplicationPage() {
                 >
                   접수 현황
                 </a>
-              {/* <a
-                  href="#"
+                <a
+                  href="https://forms.gle/Zu8GX14K37xTpAdv8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-white text-[#2f2c31] px-6 py-2 rounded-lg hover:bg-[#fff136] transition-colors max-w-[140px] w-[calc(50%-6px)] sm:w-[140px] border border-gray-300"
@@ -69,14 +69,14 @@ export default function ApplicationPage() {
                   제출 폼
                 </a>
                 <a
-                  href="#"
+                  href="https://forms.gle/vJ8dq3CtQ3S6ddJ7A"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-white text-[#2f2c31] px-6 py-2 rounded-lg hover:bg-[#fff136] transition-colors max-w-[140px] w-[calc(50%-6px)] sm:w-[140px] border border-gray-300"
                   style={{ fontFamily: 'var(--font-pretendard-semibold)' }}
                 >
                   수정 폼
-                </a> */}
+                </a>
               </div>
             </div>
             <br/>

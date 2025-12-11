@@ -16,6 +16,8 @@ export default function QnAPage() {
   const [worldQ3Open, setWorldQ3Open] = useState(false);
   const [worldQ4Open, setWorldQ4Open] = useState(false);
   const [worldQ5Open, setWorldQ5Open] = useState(false);
+  const [worldQ6Open, setWorldQ6Open] = useState(false);
+  const [worldQ7Open, setWorldQ7Open] = useState(false);
 
   // Notice section Q&A states
   const [noticeQ1Open, setNoticeQ1Open] = useState(false);
@@ -44,8 +46,8 @@ export default function QnAPage() {
                   {/* 3x3 Table for first 3 rows */}
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>마지막 갱신</span>
-                    <span className="flex-[3] text-right">11.26</span>
-                    <span className="flex-[3] text-right">12:15</span>
+                    <span className="flex-[3] text-right">12.11</span>
+                    <span className="flex-[3] text-right">13:00</span>
                   </div>
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>Q&A 마감</span>
@@ -196,6 +198,60 @@ export default function QnAPage() {
                   </div>
                 )}
               </div>
+
+              {/* Q5 */}
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setWorldQ5Open(!worldQ5Open)}
+                  onBlur={(e) => e.currentTarget.classList.remove('active')}
+                  className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
+                  style={{ fontFamily: 'var(--font-pretendard-bold)' }}
+                >
+                  <span>저택에 고립되었다면 외부와 소통할 수 있는 수단이 아예 단절되나요?</span>
+                  <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{worldQ5Open ? '−' : '+'}</span>
+                </button>
+                {worldQ5Open && (
+                  <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
+                    <p className="leading-relaxed">네, 전부 단절됩니다.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Q6 */}
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setWorldQ6Open(!worldQ6Open)}
+                  onBlur={(e) => e.currentTarget.classList.remove('active')}
+                  className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
+                  style={{ fontFamily: 'var(--font-pretendard-bold)' }}
+                >
+                  <span>창세교의 상징은 무엇인가요?</span>
+                  <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{worldQ6Open ? '−' : '+'}</span>
+                </button>
+                {worldQ6Open && (
+                  <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
+                    <p className="leading-relaxed">삼각형, 원, 그리고 삼각형 안에 원이 포함된 기호가 창세교의 상징입니다.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Q7 */}
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setWorldQ7Open(!worldQ7Open)}
+                  onBlur={(e) => e.currentTarget.classList.remove('active')}
+                  className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
+                  style={{ fontFamily: 'var(--font-pretendard-bold)' }}
+                >
+                  <span>캐릭터들은 이 저택이 연회 기간 고립될 예정이라는 걸 알고 만찬에 참여한 것일까요?</span>
+                  <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{worldQ7Open ? '−' : '+'}</span>
+                </button>
+                {worldQ7Open && (
+                  <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
+                    <p className="leading-relaxed">저택이 고립된 이유는 폭설이며, 모든 참석자는 이 사실을 예상하지 못했습니다.</p>
+                  </div>
+                )}
+              </div>
             </div>
           </section>
 
@@ -263,33 +319,33 @@ export default function QnAPage() {
                   className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
                   style={{ fontFamily: 'var(--font-pretendard-bold)' }}
                 >
-                  <span>예시 질문입니다.</span>
+                  <span>추적시 발견 가능한 소지품은 몇 개까지 적을 수 있나요?</span>
                   <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{systemQ1Open ? '−' : '+'}</span>
                 </button>
                 {systemQ1Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
-                    <p className="leading-relaxed">예시 답변입니다.</p>
+                    <p className="leading-relaxed">최대 개수 제한은 없습니다. 여러 개를 적어주시면 운영진이 가장 적절한 항목을 몇 가지 선정하거나 조합하여 정보를 제공합니다.</p>
                   </div>
                 )}
               </div>
 
               {/* Q2 */}
-              {/* <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
                 <button
                   onClick={() => setSystemQ2Open(!systemQ2Open)}
                   onBlur={(e) => e.currentTarget.classList.remove('active')}
                   className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
                   style={{ fontFamily: 'var(--font-pretendard-bold)' }}
                 >
-                  <span>예시 질문입니다.</span>
+                  <span>추적 시 발견 가능한 소지품 중에서 금지되는 유형이 있을까요?</span>
                   <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{systemQ2Open ? '−' : '+'}</span>
                 </button>
                 {systemQ2Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
-                    <p className="leading-relaxed">예시 답변입니다.</p>
+                    <p className="leading-relaxed">무기를 포함하여 소지품으로 금지되는 물품은 없으나, 세계관 설정과 미세하게 어긋나는 물품일 경우 조율 기간에 약간의 조정을 요청드릴 수 있습니다.</p>
                   </div>
                 )}
-              </div> */}
+              </div>
             </div>
           </section>
 

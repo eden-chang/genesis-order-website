@@ -9,6 +9,7 @@ export default function QnAPage() {
   // Character section Q&A states
   const [charQ1Open, setCharQ1Open] = useState(false);
   const [charQ2Open, setCharQ2Open] = useState(false);
+  const [charQ3Open, setCharQ3Open] = useState(false);
 
   // World section Q&A states
   const [worldQ1Open, setWorldQ1Open] = useState(false);
@@ -18,6 +19,7 @@ export default function QnAPage() {
   const [worldQ5Open, setWorldQ5Open] = useState(false);
   const [worldQ6Open, setWorldQ6Open] = useState(false);
   const [worldQ7Open, setWorldQ7Open] = useState(false);
+  const [worldQ8Open, setWorldQ8Open] = useState(false);
 
   // Notice section Q&A states
   const [noticeQ1Open, setNoticeQ1Open] = useState(false);
@@ -46,8 +48,8 @@ export default function QnAPage() {
                   {/* 3x3 Table for first 3 rows */}
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>마지막 갱신</span>
-                    <span className="flex-[3] text-right">12.11</span>
-                    <span className="flex-[3] text-right">13:00</span>
+                    <span className="flex-[3] text-right">12.15</span>
+                    <span className="flex-[3] text-right">11:00</span>
                   </div>
                   <div className="flex items-center">
                     <span className="font-bold flex-[10] text-left" style={{ fontFamily: 'var(--font-pretendard-bold)' }}>Q&A 마감</span>
@@ -112,6 +114,24 @@ export default function QnAPage() {
                 {charQ2Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
                     <p className="leading-relaxed">네, 가능합니다. 특정 국가가 중립 국가라는 설정은 별도의 검토 없이 사용하셔도 되나, 충분한 설명을 덧붙여 주세요.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Q3 */}
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setCharQ3Open(!charQ3Open)}
+                  onBlur={(e) => e.currentTarget.classList.remove('active')}
+                  className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
+                  style={{ fontFamily: 'var(--font-pretendard-bold)' }}
+                >
+                  <span>소비에트 연방 외의 공산권 국가(동유럽 등)을 국적으로 하는 캐릭터를 내도 될까요?</span>
+                  <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{charQ3Open ? '−' : '+'}</span>
+                </button>
+                {charQ3Open && (
+                  <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
+                    <p className="leading-relaxed">네, 가능합니다. 마찬가지로 특정 국가가 공산주의 국가라는 설정은 별도의 검토 없이 사용하실 수 있습니다.</p>
                   </div>
                 )}
               </div>
@@ -249,6 +269,27 @@ export default function QnAPage() {
                 {worldQ7Open && (
                   <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31]">
                     <p className="leading-relaxed">저택이 고립된 이유는 폭설이며, 모든 참석자는 이 사실을 예상하지 못했습니다.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Q8 */}
+              <div className="border border-[#BDB7BD] rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setWorldQ8Open(!worldQ8Open)}
+                  onBlur={(e) => e.currentTarget.classList.remove('active')}
+                  className="w-full px-4 py-3 bg-transparent md:hover:bg-[#fff136] active:bg-transparent transition-colors flex items-center justify-between text-left"
+                  style={{ fontFamily: 'var(--font-pretendard-bold)' }}
+                >
+                  <span>창세교의 계급이 정해지는 방식이 궁금합니다.</span>
+                  <span className="text-xl flex-shrink-0 ml-4 text-[#BDB7BD]">{worldQ8Open ? '−' : '+'}</span>
+                </button>
+                {worldQ8Open && (
+                  <div className="p-4 border-t border-[#BDB7BD] text-[#2f2c31] space-y-4">
+                    <p className="leading-relaxed">창세교는 표면적으로 &quot;신이 점지한 계급&quot;을 따른다고 주장하지만, 실제 작동 방식은 길리아드 정부가 관직을 수여하는 형태에 가깝습니다. 다만 이 과정을 종교적 언어로 포장한다고 보시면 됩니다.</p>
+                    <p className="leading-relaxed">길리아드 창설 당시 미국 시절의 자본가 상당수가 영사 계급으로 편입되었습니다. 창세교가 자본에 의한 계급 차이를 정당화해주었기 때문에 기존 지배층 입장에서도 이를 받아들일 이유가 충분했습니다. 제소 계급 역시 비슷하게, 미국 내에서 군인, 학자 등 전문직에 종사하던 신도들이 제소로 편입되었습니다.</p>
+                    <p className="leading-relaxed">중세 봉건제의 작위 체계를 떠올리시면 이해가 쉬울 것 같습니다. 기본적으로는 세습되지만 왕이나 황제가 새로운 작위를 임명하거나 박탈할 수 있었던 것처럼, 창세교 역시 성좌의 권한 아래 계급이 부여되고 조정됩니다.</p>
+                    <p className="leading-relaxed">물론 소련을 비롯한 무신론 진영에서는 이를 &quot;신이 점지한 계급&quot;이란 결국 부와 지위의 불평등을 합리화하기 위한 수사에 불과하다며 비판합니다. 그러나 계급을 정하는 과정에서 정말로 신의 뜻이 개입하는지, 아니면 순전히 인간의 정치적 결정인지는 소수만 알고 있습니다.</p>
                   </div>
                 )}
               </div>

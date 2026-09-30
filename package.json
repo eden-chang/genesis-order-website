@@ -12,15 +12,9 @@
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "clsx": "^2.1.1",
-    "framer-motion": "^11.11.17",
-    "gray-matter": "^4.0.3",
     "next": "^14.2.33",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1",
-    "tailwind-merge": "^2.5.4"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^20",

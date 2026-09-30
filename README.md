@@ -104,7 +104,7 @@ public/               Fonts, images, audio
 docs/PROJECT_PLAN.md  Original planning document (Korean)
 ```
 
-The `config/`, `content/`, `features/`, `lib/`, `styles/` and `types/` directories hold scaffolding from the first commit, including a Markdown footnote parser and content types. The current pages don't import any of it. All page content is written directly in the route components.
+All page content is written directly in the route components.
 
 ## Deployment
 

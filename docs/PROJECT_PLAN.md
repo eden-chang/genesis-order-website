@@ -1,3 +1,5 @@
+> Original planning document written before development (November 2025). It is kept for reference; the shipped site differs (light theme, content authored directly in page components instead of Markdown). See the root README for the current state.
+
 # 세계관 문서 웹사이트 프로젝트
 
 ## 📋 프로젝트 개요
